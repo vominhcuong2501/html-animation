@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      :root {
+        --spacing: 10px;
+      }
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: black;
+      }
+
+      #text {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: grey;
+        font-size: 20px;
+        top: 0;
+      }
+
+      input.slider {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 40px;
+        top: 40px; /* adjust as needed */
+        max-width: 600px; /* Add this line to set a max width for the slider */
+      }
+
+      .container {
+        position: absolute;
+        top: 100px; /* adjust as needed */
+
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-gap: var(--spacing);
+        max-width: auto; /* Add this line to set a max width for the container */
+      }
+
+      @media only screen and (max-width: 600px) {
+        .container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(7, 1fr);
+          grid-auto-flow: row;
+        }
+        .box {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+        background-color: #1c2028;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">Adjust icon size</p>
+    <input
+      type="range"
+      min="15"
+      max="100"
+      value="100"
+      class="slider"
+      id="sizeSlider"
+    />
+
+    <div class="container">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+      <script>
+        for (let i = 1; i <= 14; i++) {
+          let box = document.createElement("div");
+          box.classList.add("box");
+          box.id = "svgContainer" + i;
+          document.querySelector(".container").appendChild(box);
+        }
+      </script>
+      <script>
+        const lottie_path_local = [
+          "../1-aligment.json",
+          "../2-tire_mounting.json",
+          "../3-inspection.json",
+          "../4-spark-plugs.json",
+          "../5-brake_service.json",
+          "../6-oil_change.json",
+          "../7-filter.json",
+          "../8-diagnostic.json",
+          "../9-engine.json",
+          "../10-transmission.json",
+          "../11-flywheel.json",
+          "12-cooling.json",
+          "13-electrical.json",
+          "14-drive_shaft.json",
+        ];
+        const lottie_path = [
+          "https://assets2.lottiefiles.com/packages/lf20_uclfqaiw.json",
+          "https://assets10.lottiefiles.com/packages/lf20_e4pjgusr.json",
+          "https://assets5.lottiefiles.com/packages/lf20_obgudbty.json",
+          "https://assets4.lottiefiles.com/packages/lf20_l8pxvdgq.json",
+          "https://assets5.lottiefiles.com/packages/lf20_oyaj9odo.json",
+          "https://assets7.lottiefiles.com/packages/lf20_d7afbnhm.json",
+          "https://assets10.lottiefiles.com/packages/lf20_mqa7euue.json",
+          "https://assets6.lottiefiles.com/packages/lf20_bjia6d1l.json",
+          "https://assets1.lottiefiles.com/packages/lf20_gvcgasqs.json",
+          "https://assets2.lottiefiles.com/packages/lf20_jtlaso32.json",
+          "https://assets9.lottiefiles.com/packages/lf20_o9lrp6tj.json",
+          "https://assets4.lottiefiles.com/packages/lf20_q9qhfsfv.json",
+          "https://assets9.lottiefiles.com/packages/lf20_jzj3pwdu.json",
+          "https://assets5.lottiefiles.com/packages/lf20_emevyqxi.json",
+        ];
+
+        const lottie_wrapper = [
+          "svgContainer1",
+          "svgContainer2",
+          "svgContainer3",
+          "svgContainer4",
+          "svgContainer5",
+          "svgContainer6",
+          "svgContainer7",
+          "svgContainer8",
+          "svgContainer9",
+          "svgContainer10",
+          "svgContainer11",
+          "svgContainer12",
+          "svgContainer13",
+          "svgContainer14",
+        ];
+
+        var anim = [];
+        lottie_wrapper.forEach((wrapper, i) => {
+          var container = document.getElementById(wrapper);
+          var animItem = {
+            wrapper: container,
+            animType: "svg",
+            autoplay: false,
+            loop: true,
+            resizeMode: "contain",
+            path: (href = lottie_path[i]),
+          };
+
+          anim[i] = lottie.loadAnimation(animItem);
+
+          container.addEventListener("mouseenter", function () {
+            anim[i].play();
+          });
+
+          container.addEventListener("mouseleave", function () {
+            anim[i].stop();
+          });
+        });
+
+        let sizeSlider = document.getElementById("sizeSlider");
+        sizeSlider.addEventListener("input", updateContainerSize);
+
+        function updateContainerSize() {
+          let container = document.querySelector(".container");
+          container.style.width = sizeSlider.value + "%";
+          container.style.height = sizeSlider.value + "%";
+        }
+
+        window.onload = function () {
+          updateContainerSize();
+        };
+      </script>
+    </div>
+  </body>
+</html>

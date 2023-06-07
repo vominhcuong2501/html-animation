@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url(https://picsum.photos/3000/2000?image=1050);
+            background-size: cover;
+            background-position: absolute;
+            color: white;
+            font-family: tahoma;
+            width: 100%;
+            height: 100vh;
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0%;
+            }
+
+            9% {
+                left: 0%;
+            }
+
+            18% {
+                left: -100%;
+            }
+
+            27% {
+                left: -100%;
+            }
+
+            36% {
+                left: -200%;
+            }
+
+            45% {
+                left: -200%;
+            }
+
+            54% {
+                left: -300%;
+            }
+
+            63% {
+                left: -300%;
+            }
+
+            72% {
+                left: -400%;
+            }
+
+            81% {
+                left: -400%;
+            }
+
+            90% {
+                left: -500%;
+            }
+
+            100% {
+                left: -500%;
+            }
+        }
+
+        #slider {
+            overflow: hidden;
+        }
+
+        #slider figure {
+            position: fixed;
+            display: inline-block;
+            width: 600%;
+            height: 50%;
+            padding: 0px;
+            margin: 0px;
+            animation: 30s slide infinite;
+        }
+
+        #slider figure img {
+            float: left;
+            width: 16.666%;
+            height: 50%;
+        }
+
+        .my-nav {
+            position: fixed;
+            top: 25%;
+        }
+
+        .my-nav ul {
+            list-style-type: none;
+            padding: 0;
+            transform: translatex(-270px);
+        }
+
+        .my-nav ul li {
+            display: inlin-block;
+            margin-left: 30px;
+            background-color: rgba(0, 0, 0, 0);
+            width: 300px;
+            text-align: right;
+            padding: 10px;
+            border-radius: 0 30px 30px 0;
+            transition: all 1s;
+        }
+
+        .my-nav ul li:hover {
+            transform: translatex(110px);
+            padding: 5px;
+        }
+
+        .my-nav ul li.my-home:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 5px;
+        }
+
+        .my-nav ul li.my-event:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .my-nav ul li.my-music:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .my-nav ul li.my-info:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .my-nav ul li.my-photo:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .my-nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .my-nav ul li i {
+            text-align: center;
+            margin-left: 20px;
+            color: #f30876;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 28px;
+            transform: rotate(0deg);
+            cursor: none;
+        }
+
+        .my-nav ul li:hover i {
+            transform: rotate(360deg);
+            transition: all 1s;
+            background-color: #f30876;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slider">
+        <figure id="slidy">
+
+            <img
+                src="https://images.pexels.com/photos/4127880/pexels-photo-4127880.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load" />
+            <img
+                src="https://images.pexels.com/photos/792495/pexels-photo-792495.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load" />
+            <img
+                src="https://images.pexels.com/photos/2956507/pexels-photo-2956507.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load" />
+            <img
+                src="https://images.pexels.com/photos/21787/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+            <img
+                src="https://images.pexels.com/photos/7833010/pexels-photo-7833010.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load" />
+            <img
+                src="https://images.pexels.com/photos/3770757/pexels-photo-3770757.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load" />
+        </figure>
+    </div>
+    <nav class="my-nav">
+        <ul>
+            <li class="my-home"><a href="#">Home<i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li class="my-event"><a href="#">Events<i class="fa fa-calendar" aria-hidden="true"></i></a></li>
+            <li class="my-music"><a href="#">Music<i class="fa fa-photo" aria-hidden="true"></i></a></li>
+            <li class="my-info"><a href="#">Join Us<i class="fa fa-info" aria-hidden="true"></i></a></li>
+            <li class="my-photo"><a href="#">Gallery<i class="fa fa-cog" aria-hidden="true"></i></a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

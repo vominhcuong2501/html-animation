@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        :root {
+            --dayBg: rgb(253, 246, 230);
+            --daySky: linear-gradient(to right, rgb(252, 230, 164), rgb(224, 186, 82));
+            --dayM1: rgb(101, 146, 105);
+            --dayM2: rgb(88, 112, 111);
+            --dayM3: rgb(175, 198, 99);
+            --sun: rgb(238, 152, 99);
+            --sunLight: rgba(233, 134, 81, 0.5);
+            --nightBg: rgb(48, 47, 57);
+            ;
+            --nightSky: linear-gradient(to right, rgb(46, 61, 73), rgb(69, 132, 157));
+            --nightM1: rgb(94, 86, 113);
+            --nightM2: rgb(119, 134, 151);
+            --nightM3: rgb(172, 189, 202);
+            --moon: white;
+            --moonLight: rgba(255, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: var(--dayBg);
+            transition: background-color 800ms ease-in-out;
+        }
+
+        .container {
+            width: 300px;
+            height: 60px;
+            padding: 5px;
+            background-image: var(--daySky);
+            border-radius: 50px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .sun {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--sun);
+            box-shadow: 0 0 25px 15px var(--sunLight);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mountains {
+            transform: translateX(150px);
+            transition: transform 1s ease-in-out;
+        }
+
+        .mountains>div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+            border-radius: 5px;
+            transition: background-color 800ms ease-in-out;
+        }
+
+        .m1 {
+            background-color: var(--dayM1);
+            left: 40px;
+            top: -10px;
+            transition: left 800ms ease-in-out 100ms;
+        }
+
+        .m2 {
+            background-color: var(--dayM2);
+            left: 70px;
+            top: -15px;
+            transition: left 1s ease-in-out 100ms;
+        }
+
+        .m3 {
+            background-color: var(--dayM3);
+            left: 0px;
+            top: -20px;
+            transition: left 800ms ease-in-out;
+        }
+
+        .night .wrapper {
+            background-color: var(--nightBg);
+        }
+
+        .night .container {
+            background-image: var(--nightSky);
+        }
+
+        .night .sun {
+            background-color: var(--moon);
+            box-shadow: 0 0 25px 15px var(--moonLight);
+            transform: translateX(240px)
+        }
+
+        .night .mountains {
+            transform: translateX(-10px);
+        }
+
+        .night .m1 {
+            background-color: var(--nightM1);
+            left: 20px;
+        }
+
+        .night .m2 {
+            background-color: var(--nightM2);
+            left: -10px;
+        }
+
+        .night .m3 {
+            background-color: var(--nightM3);
+            left: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='wrapper'>
+        <div class='container'>
+            <div class='sun'></div>
+            <div class='mountains'>
+                <div class='m1'></div>
+                <div class='m2'></div>
+                <div class='m3'></div>
+            </div>
+        </div>
+    </div>
+    <script>function time(e) {
+            if (e.target.closest('.container')) {
+                document.body.classList.toggle('night');
+            }
+        }
+
+        window.addEventListener('click', time, false);</script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            background-color: #2A628F;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn button {
+            margin: 10px 20px;
+            padding: 10px 25px;
+            width: 100px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            background-color: #18435A;
+            box-shadow: 0 4px black;
+            color: white;
+        }
+
+        .btn button:hover {
+            box-shadow: 0 2px black;
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+        .btn button:active {
+            box-shadow: none;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        #mainCube {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 200px auto;
+            margin-bottom: 0;
+        }
+
+        #box {
+            width: 200px;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #box div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #3E92CC;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #front {
+            transform: translateZ(100px);
+        }
+
+        #back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        #left {
+            transform: rotateY(-90deg) translateX(-100px);
+            transform-origin: left;
+        }
+
+        #right {
+            transform: rotateY(90deg) translateX(100px);
+            transform-origin: right;
+        }
+
+        #top {
+            transform: rotateX(90deg) translateY(-100px);
+            transform-origin: top;
+        }
+
+        #bottom {
+            transform: rotateX(-90deg) translateY(100px);
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">
+        <button onclick="rotateFront()">Front</button>
+        <button onclick="rotateBack()">Back</button>
+        <button onclick="rotateLeft()">Left</button>
+        <button onclick="rotateRight()">Right</button>
+        <button onclick="rotateTop()">Top</button>
+        <button onclick="rotateBottom()">Bottom</button>
+    </div>
+    <div id="mainCube">
+        <div id="box">
+            <div id="front">Front</div>
+            <div id="back">Back</div>
+            <div id="top">Top</div>
+            <div id="bottom">Bottom</div>
+            <div id="left">Left</div>
+            <div id="right">Right</div>
+        </div>
+    </div>
+    <script>
+        var box = document.querySelector("#box");
+        function rotateRight() {
+            box.style.transform = "rotateY(-90deg)";
+        }
+        function rotateLeft() {
+            box.style.transform = "rotateY(90deg)";
+        }
+        function rotateTop() {
+            box.style.transform = "rotateX(-90deg)";
+            box.style.transformOrigin = "center";
+        }
+        function rotateBottom() {
+            box.style.transform = "rotateX(90deg)";
+        }
+        function rotateFront() {
+            box.style.transform = "rotateY(0deg)";
+        }
+        function rotateBack() {
+            box.style.transform = "rotateY(180deg)";
+        }
+    </script>
+</body>
+
+</html>

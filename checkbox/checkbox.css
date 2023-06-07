@@ -1,0 +1,824 @@
+:root {
+  --main-color: #0074e8;
+  --box-shadow-tint: #0074e8cc;
+  --light-highlight: #c6e2ff;
+}
+
+html {
+  font-size: 24px;
+}
+
+body {
+  margin: 2em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+#colors {
+  position: fixed;
+  right: 2em;
+  top: 7em;
+  width: 5em;
+}
+#colors > div {
+  width: 1em;
+  height: 1em;
+  float: right;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0 0em 1em 0.5em;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 0.1s ease-out;
+}
+#colors > div:hover {
+  box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
+}
+[data-color="purple"] {
+  background: #9100e8;
+}
+[data-color="blue"] {
+  background: #0074e8;
+}
+[data-color="green"] {
+  background: #20b951;
+}
+[data-color="red"] {
+  background: #de4947;
+}
+[data-color="orange"] {
+  background: #dc7d17;
+}
+
+a.link {
+  font-size: 0.75em;
+  background: var(--main-color);
+  padding: 0.5em 1em;
+  border-radius: 100px;
+  transition: all 0.1s ease-out;
+  color: white;
+  position: fixed;
+  top: 2em;
+  right: 2.5em;
+  text-decoration: none;
+  display: block;
+}
+
+a.link + .link {
+  top: 4rem;
+}
+a.link:hover {
+  box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.3);
+}
+[type="checkbox"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  top: 0;
+  right: 999999px;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+}
+
+.list {
+  padding: 1em 0;
+}
+
+.list-item {
+  height: 1.5em;
+  border-bottom: 1px solid rgb(52 69 69 / 8%);
+  padding: 0.75em 0;
+  white-space: nowrap;
+}
+
+.list-item-text {
+  height: 1.5em;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.1167em;
+  line-height: 1.5em;
+  margin: 0 1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.dark {
+  background: #262b31;
+  border-bottom: none;
+  padding: 1em;
+  width: calc(100% + 5em);
+  height: 3.5em;
+  box-sizing: border-box;
+  margin: 0 0 0 -3em;
+  padding: 1em 3em;
+}
+
+.dark .list-item-text {
+  color: white;
+}
+/* Some default values */
+.pseudo-checkbox {
+  width: 1.5em;
+  height: 1.5em;
+  position: relative;
+  border-radius: 6px;
+  display: block;
+  background: white;
+}
+
+/* F1 */
+.f1 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f1 input[type="checkbox"]:checked + *:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  content: "\f00c";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-weight: 600;
+  color: white;
+  pointer-events: none;
+  font-weight: 600;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+.f1 input[type="checkbox"]:focus + *,
+.f1:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f1 [type="checkbox"]:checked + * {
+  background: var(--main-color);
+  color: white;
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+
+/* F2 */
+.f2 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  border-radius: 100px;
+  cursor: pointer;
+  width: 3em;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f2 input + .pseudo-checkbox:after {
+  content: "";
+  width: calc(1.5em - 4px);
+  border-radius: 100px;
+  height: calc(1.5em - 4px);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.15s ease-out;
+  background: #bbbbbb;
+}
+
+.f2 input:checked + .pseudo-checkbox:after {
+  left: calc(100% - 1.5em + 2px);
+  content: "";
+  background: white;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.f2 input[type="checkbox"]:focus + *,
+.f2:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: #0000003d 0px 2px 2px 0px, var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+.f2 [type="checkbox"]:checked + *:after {
+  content: "\f00c";
+}
+
+.f2 [type="checkbox"]:checked + * {
+  background: var(--main-color);
+  color: white;
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+
+/* F3 */
+.f3 .pseudo-checkbox {
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f3 [type="checkbox"]:focus + span + label,
+.f3 [type="checkbox"]:hover + span + label {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: var(--light-highlight);
+}
+
+.f3[data-value="1"] label {
+  background: var(--main-color);
+  color: white;
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+
+.f3[data-value="1"] input[type="checkbox"] + span + .pseudo-checkbox {
+  background: var(--main-color);
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+
+.f3 .halfway {
+  position: absolute;
+  top: 0;
+  box-shadow: rgba(52, 69, 69, 0.16) 1px 0px 0px 0px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.1s ease-out;
+  z-index: 9;
+  border-radius: 6px 0 0 6px;
+  cursor: pointer;
+}
+
+.f3 .halfway.active {
+  background: var(--main-color);
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+
+.f3 .halfway.active:hover {
+  background: var(--main-color);
+}
+.f3 .halfway:hover {
+  background: var(--light-highlight);
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 0px 0px 0px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f3 .halfway:hover + * {
+  background: white;
+}
+
+.f3 [type="checkbox"]:focus + .halfway.active,
+.f3:hover [type="checkbox"] + .halfway.active {
+  /* For focusing */
+  box-shadow: 1px 0 0 0 var(--main-color);
+}
+
+.f3[data-value="1"]:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  content: "\f00c";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: var(--main-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  pointer-events: none;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+/* F4 */
+.f4 {
+  width: 3em;
+}
+
+.f4 .pseudo-checkbox {
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
+.f4 input[type="checkbox"] + *:after {
+  transition: all 0.1s ease-out;
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  content: "";
+  text-align: center;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  color: white;
+  pointer-events: none;
+  top: 0.25em;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  z-index: -1;
+  border-radius: 100px;
+  left: -1px;
+  background: white;
+}
+
+.f4 [type="checkbox"] + * {
+  z-index: 99999;
+  border-radius: 100px;
+  background: transparent;
+  color: white;
+  width: 100%;
+}
+
+.f4 input:checked + .pseudo-checkbox:after {
+  left: calc(100% - 1em + 2px);
+  box-shadow: #0074e600 0px 2px 2px 0px, var(--main-color) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: var(--main-color);
+}
+
+.f4 input + .pseudo-checkbox:before,
+.f4:after {
+  content: "";
+  width: 100%;
+  border-radius: 100px;
+  z-index: -1;
+  height: 6px;
+  position: absolute;
+  top: calc(50% - 3px);
+  border-radius: 100px;
+  left: 0;
+  transition: all 0.15s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: white;
+}
+.f4:after {
+  background: var(--main-color);
+  width: 0px;
+  z-index: 99999;
+  box-shadow: none;
+  pointer-events: none;
+  display: block;
+}
+
+.f4[data-value="1"]:after {
+  width: 100%;
+}
+.f4 input[type="checkbox"]:focus + .pseudo-checkbox:after,
+.f4:hover input[type="checkbox"] + *:after {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: var(--main-color);
+}
+
+/* F5 */
+.f5 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f5 input[type="checkbox"] + *:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  content: "\f00c";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  pointer-events: none;
+  top: 0;
+  border-radius: 100px;
+  font-weight: 600;
+  background: var(--main-color);
+  color: white;
+  box-shadow: 0 0 0 1px var(--main-color);
+  clip-path: circle(0% at 0.25em 0.25em);
+  z-index: 999;
+  transform: scale(1);
+  transition: all 0.08s cubic-bezier(0, 1.13, 0.93, 0.82);
+  left: 0;
+}
+
+.f5 [type="checkbox"]:focus + *,
+.f5:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: linear-gradient(0deg, #f3f9ff, #f4faff);
+}
+
+.f5 [type="checkbox"]:checked + *:after {
+  clip-path: circle(100% at 0.25em 0.25em);
+}
+
+/* F6 */
+.f6 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f6 [type="checkbox"]:checked + label {
+  background: var(--main-color);
+  box-shadow: none;
+}
+.f6 input[type="checkbox"] + *:after,
+.f6 input[type="checkbox"] + *:before {
+  line-height: 1.5em;
+  content: "";
+  text-align: center;
+  width: 70%;
+  pointer-events: none;
+  height: 70%;
+  position: absolute;
+  pointer-events: none;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  top: 15%;
+  transform: scale(0.001);
+  border-radius: 100px;
+  background: white;
+  z-index: 999;
+  transition: all 0.08s cubic-bezier(0, 1.13, 0.93, 0.82);
+  left: 15%;
+}
+
+.f6 input[type="checkbox"] + *:before {
+  width: 40%;
+  height: 40%;
+  top: 30%;
+  left: 30%;
+  z-index: 9999;
+  background: var(--main-color);
+  box-shadow: none;
+}
+
+.f6 input[type="checkbox"]:checked + *:after,
+.f6 input[type="checkbox"]:checked + *:before {
+  transform: scale(1);
+}
+.f6 > input[type="checkbox"]:focus + *,
+.f6:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+/* F7 */
+.f7 {
+  width: 4em;
+  cursor: pointer;
+}
+.f7 .noway,
+.f7 .fullway,
+.f7 .thirdway,
+.f7 .threethirdway {
+  content: "";
+  width: 0.75em;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  position: absolute;
+  top: calc(50% - 0.3525em);
+  left: -3px;
+  z-index: 99;
+  border-radius: 100px;
+  height: 0.75em;
+  background: white;
+}
+.f7 .fullway,
+.f7 .thirdway,
+.f7 .threethirdway {
+  right: -3px;
+  left: auto;
+  z-index: 999;
+  cursor: pointer;
+}
+.f7 .thirdway {
+  left: calc(33.3% - 0.2em);
+}
+.f7 .threethirdway {
+  left: calc(66.6% - 0.4em);
+}
+.f7 .pseudo-checkbox {
+  width: inherit;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.f7[data-value="0"] .noway,
+.f7[data-value="1"] .noway,
+.f7[data-value="1"] .fullway,
+.f7[data-value="1"] .thirdway,
+.f7[data-value="1"] .threethirdway,
+.f7[data-value="0.33"] .noway,
+.f7[data-value="0.33"] .thirdway,
+.f7[data-value="0.66"] .noway,
+.f7[data-value="0.66"] .thirdway,
+.f7[data-value="0.66"] .threethirdway {
+  background: var(--main-color);
+  box-shadow: var(--main-color) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px, 0 3px 2px rgba(0, 0, 0, 0.15);
+}
+
+.f7 input[type="checkbox"] ~ label:after {
+  width: inherit;
+  content: "";
+  height: 6px;
+  border-radius: 100px;
+  top: calc(50% - 3px);
+  background: white;
+  position: absolute;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f7 input[type="checkbox"]:focus ~ label:after {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: linear-gradient(0deg, #f3f9ff, #f4faff);
+}
+
+/* F8 */
+.f8 label {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  float: left;
+  width: auto;
+  border-radius: 6px;
+}
+
+.f8 label {
+  float: left;
+  /* font-weight: 600; */
+  cursor: pointer;
+  padding: 0 0.75em;
+  color: #848484;
+  user-select: none;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  width: auto;
+  height: auto;
+}
+
+.f8 input[type="checkbox"] + *:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  transition: height 0.08s cubic-bezier(0, 1.13, 0.93, 0.82),
+    top 0.08s cubic-bezier(0, 1.13, 0.93, 0.82);
+  content: "\f00c";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  font-weight: 600;
+  opacity: 0;
+  color: white;
+  pointer-events: none;
+  z-index: 999;
+  border-radius: 6px;
+  left: 0;
+  background: var(--main-color);
+  top: 100%;
+  color: white;
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+
+.f8 input[type="checkbox"]:checked + *:after {
+  top: 0;
+  opacity: 1;
+  height: 100%;
+}
+
+.f8 [type="checkbox"]:focus + *,
+.f8:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+/* F9 */
+.f9 label {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  float: left;
+  width: auto;
+  border-radius: 6px;
+}
+
+.f9 label {
+  float: left;
+  cursor: pointer;
+  padding: 0 0.75em 0 2.25em;
+  color: #848484;
+  user-select: none;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  width: auto;
+  height: auto;
+}
+
+.f9 input[type="checkbox"] + *:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.5em;
+  transition: height 0.08s cubic-bezier(0, 1.13, 0.93, 0.82),
+    top 0.08s cubic-bezier(0, 1.13, 0.93, 0.82);
+  content: "\f00d";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
+  border-radius: 6px 0 0 6px;
+  font-weight: 600;
+  left: 0;
+  width: 1.5em;
+  top: 0;
+}
+
+.f9 input[type="checkbox"]:checked + *:after {
+  background: var(--main-color);
+  box-shadow: 0 0 0 1px var(--main-color);
+  color: white;
+  content: "\f00c";
+}
+
+.f9 [type="checkbox"]:focus + *,
+.f9:hover [type="checkbox"] + * {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+/* F10 */
+.f10 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f10 input[type="checkbox"]:checked ~ label:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 2.5em;
+  content: "\f00c";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.633em;
+  background: var(--main-color);
+  position: absolute;
+  clip-path: circle(40%);
+  border-radius: 100px;
+  font-weight: 600;
+  color: white;
+  pointer-events: none;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+.f10 input[type="checkbox"]:focus ~ label,
+.f10:hover [type="checkbox"] ~ label {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: linear-gradient(0deg, #f3f9ff, #f4faff);
+}
+
+.f10 [type="checkbox"]:checked ~ label {
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f10 svg {
+  position: absolute;
+  top: -0.65em;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  left: -0.5em;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.f10 [type="checkbox"]:checked ~ svg {
+  animation: dash 2s linear forwards;
+}
+
+/* F11 */
+.f11 .pseudo-checkbox {
+  background: linear-gradient(0deg, #f6fbff, white);
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px,
+    rgba(52, 69, 69, 0.16) 0px 0px 0px 1px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+}
+
+.f11 input[type="checkbox"]:checked ~ label:after {
+  font-family: "Font Awesome 5 Free";
+  line-height: 2.5em;
+  content: "";
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.633em;
+  background: var(--main-color);
+  position: absolute;
+  border-radius: 6px;
+  box-shadow: none;
+  font-weight: 600;
+  color: white;
+  pointer-events: none;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+.f11 input[type="checkbox"]:focus ~ label,
+.f11:hover [type="checkbox"] ~ label {
+  /* For focusing */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px 0px,
+    var(--box-shadow-tint) 0px 0px 0px 2px,
+    rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+  background: linear-gradient(0deg, #f3f9ff, #f4faff);
+}
+
+.f11 [type="checkbox"]:checked ~ label {
+  color: white;
+  box-shadow: none;
+}
+
+.f11 svg {
+  position: absolute;
+  top: 0.25em;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transform: scale3d(1.3, 1, 1);
+  left: 0.25em;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.f11 [type="checkbox"]:checked ~ svg {
+  animation: dash 2s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

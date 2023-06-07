@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      .msg {
+        width: 100%;
+        padding: 25px;
+        background: #ffffff;
+        color: #fff;
+        position: absolute;
+        transition: all 0.5s;
+        overflow: hidden;
+        top: -250px;
+        left: 0;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      }
+
+      h1 {
+        font-size: 50px;
+        color: #fff;
+        margin-left: 330px;
+        margin-top: 60px;
+      }
+
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        top: 25px;
+        left: 25px;
+      }
+
+      input[type="checkbox"]:checked ~ .msg {
+        top: 0;
+      }
+
+      input[type="checkbox"]:checked ~ .menu span {
+        transform: scale3d(0, 1, 1);
+      }
+
+      input[type="checkbox"]:after {
+        transform: rotate3d(0, 1, 1, 45deg);
+      }
+
+      input[type="checkbox"]:before {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+
+      .menu {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        display: block;
+        border-radius: 10px;
+        cursor: pointer;
+        top: 14px;
+        left: 20px;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0px 2px 15px 1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      }
+
+      .menu:after,
+      .menu:before {
+        content: "";
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        background: red;
+        top: 50%;
+        transition: transform 0.5s;
+        transform-origin: 60% 50%;
+      }
+
+      .menu:after {
+        transform: translate3d(0, -10px, 0) scale3d(0.8, 1, 1);
+      }
+
+      .menu:before {
+        transform: translate3d(0, 10px, 0) scale3d(0.8, 1, 1);
+      }
+
+      span {
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        overflow: hidden;
+        background: red;
+        top: 50%;
+        transition: all 0.5s;
+      }
+
+      li {
+        list-style: none;
+        float: left;
+        margin-left: 22px;
+      }
+
+      li a:hover {
+        text-decoration: none;
+        padding: 10px 10px;
+        color: rgb(49, 69, 106);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        box-shadow: inset 4px 4px 6px -1px rgba(49, 69, 106, 0.2),
+          inset -4px -4px 6px 1px rgba(255, 255, 255, 0.7),
+          -0.5px -0.5px 0 rgba(255, 255, 255, 1),
+          0.5px 0.5px 0 rgba(0, 0, 0, 0.15),
+          0px 12px 120px -10px rgba(0, 0, 0, 0.05);
+      }
+
+      li a {
+        border-radius: 12px;
+        text-decoration: none;
+        padding: 10px 10px;
+        color: black;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+          -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+      }
+
+      .items {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="menu" type="checkbox" />
+    <label for="menu" class="menu">
+      <span>Menu</span>
+    </label>
+    <div class="msg">
+      <ul class="items">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contect</a></li>
+        <li><a href="#">Privercy</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

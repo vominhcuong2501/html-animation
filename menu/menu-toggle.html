@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      .menu {
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+      }
+
+      #check {
+        display: none;
+      }
+
+      label {
+        cursor: pointer;
+        font-size: 24px;
+      }
+      label:before {
+        content: "\2630";
+        font-size: 24px;
+      }
+
+      .header {
+        text-align: center;
+        background-color: #eee;
+        height: 50px;
+      }
+
+      .menu_item {
+        display: flex;
+        flex: 100%;
+        height: 50px;
+        background-color: #4cc9d8;
+        transition: 400ms ease;
+        transition-delay: calc(50ms * calc(1 * var(--timer)));
+        transform: translateX(-100%);
+      }
+
+      .menu_item:focus {
+        background-color: pink;
+      }
+
+      .menu_item:nth-child(even) {
+        background-color: orange;
+      }
+
+      #check:checked ~ .menu .menu_item {
+        transform: translateX(0%);
+      }
+
+      .menu_link {
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25rem 1.5rem;
+        text-decoration: none;
+        transform: translateX(0%);
+        transition: 0.5ms;
+        width: 100%;
+      }
+
+      .menu_link::after {
+        border: solid currentColor;
+        border-width: 0.125rem 0.125rem 0 0;
+        content: "";
+        height: 0.5rem;
+        transform: rotate(45deg);
+        width: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="check" type="checkbox" name="menu" />
+    <label for="check">Toggle Here</label>
+
+    <ul class="menu">
+      <li class="menu_item" style="--timer: 1">
+        <a class="menu_link" href="#"> Badger </a>
+      </li>
+      <li class="menu_item" style="--timer: 2">
+        <a class="menu_link" href="#"> Beaver </a>
+      </li>
+      <li class="menu_item" style="--timer: 3">
+        <a class="menu_link" href="#"> Buffalo </a>
+      </li>
+      <li class="menu_item" style="--timer: 4">
+        <a class="menu_link" href="#"> Bandicoot </a>
+      </li>
+      <li class="menu_item" style="--timer: 5">
+        <a class="menu_link" href="#"> Bobcat </a>
+      </li>
+    </ul>
+  </body>
+</html>

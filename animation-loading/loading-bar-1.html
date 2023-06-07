@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      :root {
+        --lightpurple: #dbd8fa;
+        --purple: #c3bef7;
+        --darkpurple: #8a4fff;
+        --pink: #d496a7;
+        --lightpink: #f6c0d0;
+        --darkpink: #8e7c93;
+        --green: #17bebb;
+        --darkgreen: #037171;
+        --blue: #6cd4ff;
+      }
+      body {
+        background-color: #696969;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .container {
+        background-color: whitesmoke;
+        width: 95%;
+        height: 150px;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+
+      .LoadingText {
+        border-radius: 5px 5px 0px 0px;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #LoadingText1 {
+        background-color: #424b54;
+      }
+
+      .letter,
+      .letter2,
+      .letter3 {
+        background-color: none;
+        width: 5%;
+        height: auto;
+        text-align: center;
+        font-size: 15pt;
+        color: #c3bef7;
+      }
+
+      #LoadingBar1 {
+        border: solid 5px #424b54;
+        border-radius: 35px;
+        height: 40%;
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .purplebox {
+        background-color: var(--lightpurple);
+        margin-left: 1%;
+        width: 13%;
+        height: 80%;
+        visibility: hidden;
+      }
+
+      .letter {
+        animation-name: letters;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes letters {
+        0% {
+          color: var(--lightpurple);
+        }
+        20% {
+          color: var(--lightpurple);
+        }
+        50% {
+          color: var(--purple);
+        }
+        100% {
+          color: var(--darkpurple);
+        }
+      }
+
+      #box1,
+      #box2,
+      #box3,
+      #box4,
+      #box5,
+      #box6,
+      #box7 {
+        animation-name: box;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+      }
+
+      #box1 {
+        margin-left: 0%;
+        border-radius: 35px 0px 0px 35px;
+      }
+
+      #box2,
+      #O {
+        animation-delay: 0.25s;
+      }
+
+      #box3,
+      #A {
+        animation-delay: 0.5s;
+      }
+
+      #box4,
+      #D {
+        animation-delay: 0.75s;
+      }
+
+      #box5,
+      #I {
+        animation-delay: 1s;
+      }
+
+      #box6,
+      #N {
+        animation-delay: 1.25s;
+      }
+
+      #box7,
+      #G {
+        animation-delay: 1.5s;
+        border-radius: 0px 35px 35px 0px;
+      }
+
+      @keyframes box {
+        0% {
+          visibility: hidden;
+          background-color: var(--lightpurple);
+        }
+        20% {
+          visibility: hidden;
+        }
+        33% {
+          visibility: visible;
+        }
+        50% {
+          background-color: var(--purple);
+        }
+        100% {
+          background-color: var(--darkpurple);
+        }
+      }
+
+      /* SECTION FOR LOADING BAR 2*/
+
+      .container2 {
+        background-color: #5d576b;
+        width: 95%;
+        height: 150px;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+
+      #LoadingText2 {
+        background-color: whitesmoke;
+        font-weight: bold;
+      }
+
+      #LoadingBar2 {
+        border: dashed 5px whitesmoke;
+        border-radius: 20px;
+        height: 40%;
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .letter2 {
+        animation-name: letters2;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes letters2 {
+        0% {
+          color: var(--darkgreen);
+        }
+        10% {
+          color: var(--darkgreen);
+        }
+        20% {
+          color: var(--green);
+        }
+        50% {
+          color: var(--green);
+        }
+        75% {
+          color: var(--blue);
+        }
+        100% {
+          color: var(--blue);
+        }
+      }
+
+      .circle {
+        background-color: var(--darkgreen);
+        margin-left: 1%;
+        width: 13%;
+        height: 20%;
+        border-radius: 100px;
+      }
+
+      #circle1,
+      #circle2,
+      #circle3,
+      #circle4,
+      #circle5,
+      #circle6,
+      #circle7 {
+        animation-name: circle;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      #circle1 {
+        margin-left: 0%;
+        margin-bottom: -5%;
+      }
+
+      #circle2,
+      #O {
+        animation-delay: 0.25s;
+      }
+
+      #circle3,
+      #A {
+        animation-delay: 0.5s;
+      }
+
+      #circle3,
+      #circle7 {
+        margin-bottom: 5%;
+      }
+
+      #circle4,
+      #D {
+        animation-delay: 0.75s;
+      }
+
+      #circle5,
+      #I {
+        animation-delay: 1s;
+      }
+
+      #circle5 {
+        margin-bottom: -5%;
+      }
+
+      #circle6,
+      #N {
+        animation-delay: 1.25s;
+      }
+
+      #circle7,
+      #G {
+        animation-delay: 1.5s;
+      }
+
+      @keyframes circle {
+        0% {
+          background-color: var(--darkgreen);
+          margin-bottom: -5%;
+        }
+        50% {
+          background-color: var(--green);
+          margin-bottom: 0%;
+        }
+        100% {
+          background-color: var(--blue);
+          margin-bottom: 5%;
+        }
+      }
+
+      /*SECTION FOR LOADING BAR 3*/
+
+      .container3 {
+        background-color: whitesmoke;
+        width: 95%;
+        height: 150px;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+
+      #LoadingText3 {
+        background-color: #272d2d;
+      }
+
+      #LoadingBar3 {
+        border: dotted 5px #272d2d;
+        border-radius: 20px;
+        height: 40%;
+        width: 90%;
+        margin-top: 20px;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .letter3 {
+        animation-name: letters3;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes letters3 {
+        0% {
+          color: var(--darkpink);
+        }
+        10% {
+          color: var(--darkpink);
+        }
+        20% {
+          color: var(--pink);
+        }
+        50% {
+          color: var(--pink);
+        }
+        75% {
+          color: var(--lightpink);
+        }
+        100% {
+          color: var(--lightpink);
+        }
+      }
+
+      .bar {
+        background-color: var(--darkpink);
+        margin-left: 1%;
+        margin-bottom: 0%;
+        width: 13%;
+      }
+
+      #bar1,
+      #bar2,
+      #bar3,
+      #bar4,
+      #bar5,
+      #bar6,
+      #bar7 {
+        animation-name: bar;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      #bar1 {
+        margin-left: 0%;
+      }
+
+      #bar2,
+      #O {
+        animation-delay: 0.25s;
+      }
+
+      #bar3,
+      #A {
+        animation-delay: 0.5s;
+      }
+
+      #bar4,
+      #D {
+        animation-delay: 0.75s;
+      }
+
+      #bar5,
+      #I {
+        animation-delay: 1s;
+      }
+
+      #bar6,
+      #N {
+        animation-delay: 1.25s;
+      }
+
+      #bar7,
+      #G {
+        animation-delay: 1.5s;
+      }
+
+      @keyframes bar {
+        0% {
+          background-color: var(--darkpink);
+          height: 20%;
+        }
+        50% {
+          background-color: var(--pink);
+          height: 50%;
+        }
+        100% {
+          background-color: var(--lightpink);
+          height: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container1">
+      <div class="LoadingText" id="LoadingText1">
+        <div class="letter" id="L">L</div>
+        <div class="letter" id="O">O</div>
+        <div class="letter" id="A">A</div>
+        <div class="letter" id="D">D</div>
+        <div class="letter" id="I">I</div>
+        <div class="letter" id="N">N</div>
+        <div class="letter" id="G">G</div>
+      </div>
+      <div id="LoadingBar1">
+        <div class="purplebox" id="box1"></div>
+        <div class="purplebox" id="box2"></div>
+        <div class="purplebox" id="box3"></div>
+        <div class="purplebox" id="box4"></div>
+        <div class="purplebox" id="box5"></div>
+        <div class="purplebox" id="box6"></div>
+        <div class="purplebox" id="box7"></div>
+      </div>
+    </div>
+
+    <div class="container2" id="container2">
+      <div class="LoadingText" id="LoadingText2">
+        <div class="letter2" id="L">L</div>
+        <div class="letter2" id="O">O</div>
+        <div class="letter2" id="A">A</div>
+        <div class="letter2" id="D">D</div>
+        <div class="letter2" id="I">I</div>
+        <div class="letter2" id="N">N</div>
+        <div class="letter2" id="G">G</div>
+      </div>
+      <div id="LoadingBar2">
+        <div class="circle" id="circle1"></div>
+        <div class="circle" id="circle2"></div>
+        <div class="circle" id="circle3"></div>
+        <div class="circle" id="circle4"></div>
+        <div class="circle" id="circle5"></div>
+        <div class="circle" id="circle6"></div>
+        <div class="circle" id="circle7"></div>
+      </div>
+    </div>
+
+    <div class="container3" id="container3">
+      <div class="LoadingText" id="LoadingText3">
+        <div class="letter3" id="L">L</div>
+        <div class="letter3" id="O">O</div>
+        <div class="letter3" id="A">A</div>
+        <div class="letter3" id="D">D</div>
+        <div class="letter3" id="I">I</div>
+        <div class="letter3" id="N">N</div>
+        <div class="letter3" id="G">G</div>
+      </div>
+      <div id="LoadingBar3">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+        <div class="bar" id="bar4"></div>
+        <div class="bar" id="bar5"></div>
+        <div class="bar" id="bar6"></div>
+        <div class="bar" id="bar7"></div>
+      </div>
+    </div>
+  </body>
+</html>

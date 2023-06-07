@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+      :root {
+        --container-bg-color: #333;
+        --left-bg-color: rgba(0, 0, 0, 0.4);
+        --right-bg-color: rgba(0, 0, 0, 0.4);
+        --hover-width: 75%;
+        --other-width: 25%;
+        --speed: 0.8s;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        height: 100vh;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 4rem;
+        white-space: nowrap;
+      }
+
+      p {
+        max-width: 25ch;
+      }
+
+      .container {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: var(--container-bg-color);
+      }
+
+      .split {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .split.left {
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: url("https://i.ibb.co/bKXNDft/Artboard-1.png") left
+          no-repeat;
+        background-size: cover;
+        isolation: isolate;
+      }
+
+      .split.left:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--left-bg-color);
+        z-index: -1;
+      }
+
+      .split.right {
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: url("https://i.ibb.co/gThB5GP/Artboard-2.png") right
+          no-repeat;
+        background-size: cover;
+        isolation: isolate;
+      }
+
+      .split.right:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: var(--right-bg-color);
+        z-index: -1;
+      }
+
+      .split.left,
+      .split.right,
+      .split.right:before,
+      .split.left:before {
+        transition: var(--speed) all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .hover-left .left {
+        width: var(--hover-width);
+      }
+
+      .hover-left .right {
+        width: var(--other-width);
+      }
+
+      .hover-left .right:before {
+        z-index: 2;
+      }
+
+      .hover-right .right {
+        width: var(--hover-width);
+      }
+
+      .hover-right .left {
+        width: var(--other-width);
+      }
+
+      .hover-right .left:before {
+        z-index: 2;
+      }
+
+      @media (max-width: 800px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .button {
+          width: 12rem;
+        }
+      }
+
+      @media (max-height: 700px) {
+        .button {
+          top: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="split left">
+        <h1>designer</h1>
+        <p>Product designer specialising in UI design and design systems.</p>
+      </div>
+      <div class="split right">
+        <h1>&lt;coder&gt;</h1>
+        <p>Front-end developer who writes clean, elegant and efficient code.</p>
+      </div>
+    </div>
+    <script>
+      const addHoverClass = (element, className) => {
+        element.addEventListener("mouseenter", () => {
+          container.classList.add(className);
+        });
+
+        element.addEventListener("mouseleave", () => {
+          container.classList.remove(className);
+        });
+      };
+
+      const left = document.querySelector(".left");
+      const right = document.querySelector(".right");
+      const container = document.querySelector(".container");
+
+      addHoverClass(left, "hover-left");
+      addHoverClass(right, "hover-right");
+    </script>
+  </body>
+</html>

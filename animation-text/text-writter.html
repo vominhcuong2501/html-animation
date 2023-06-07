@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+
+      * {
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: steelblue;
+        color: white;
+        font-family: "Source Code Pro", monospace;
+        font-weight: 300;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+      }
+
+      .typing-text {
+        width: 15ch;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        font-size: 6vw;
+        animation: typing 2s steps(14) infinite alternate,
+          blink 0.4s step-end infinite alternate;
+        text-shadow: 0px 0px 3px white;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      @media (max-width: 767px) {
+        h1 {
+          font-size: 4vw;
+        }
+        .typing-text {
+          font-size: 8vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="typing-text">Võ Minh Cường</div>
+  </body>
+</html>

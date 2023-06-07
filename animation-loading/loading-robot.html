@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #222;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      #platform {
+        position: absolute;
+        top: calc(50% - 10vh);
+        left: calc(50% - 40vw);
+        width: 80vw;
+        height: 20vh;
+        perspective: 600px;
+      }
+      /* Guy */
+      .guy {
+        font-size: 10vw;
+        position: absolute;
+        left: calc(50% - 0.5em);
+        top: calc(50% - 1em);
+        width: 1em;
+        height: 1em;
+        transform-style: preserve-3d;
+        color: transparent;
+        transition: all ease 0.3s;
+        animation: spinIt linear 20s infinite;
+      }
+      @keyframes spinIt {
+        0% {
+          transform: translateZ(-10vw) rotateY(180deg);
+        }
+        100% {
+          transform: translateZ(-10vw) rotateY(-180deg);
+        }
+      }
+      .head .front-face:before,
+      .head .front-face:after {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 0.2em;
+        height: 0.2em;
+        background: #000;
+      }
+      .head .front-face:after {
+        left: auto;
+        right: 20%;
+      }
+      b {
+        display: block;
+        width: 1em;
+        height: 1em;
+        background: rgba(0, 255, 255, 0.3);
+        box-shadow: inset 0 0 0.1em rgba(0, 255, 0, 0.1),
+          inset 0 0 0.3em rgba(0, 0, 0, 0.8);
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: all ease 3s;
+      }
+      .guy:hover b {
+        background: rgba(255, 0, 255, 0.3);
+      }
+      .guy:active b {
+        background: rgba(0, 255, 255, 0.3);
+        transform: rotateY(0deg) translateY(0vw) translateZ(0vw) !important;
+        box-shadow: inset 0 0 0.1em rgba(0, 255, 0, 0.1);
+      }
+      /* Body */
+      .body {
+        position: absolute;
+        bottom: -0.3em;
+      }
+      .rightArm {
+        transform-style: preserve-3d;
+        position: absolute;
+        left: -0.5em;
+      }
+      .leftArm {
+        transform-style: preserve-3d;
+        position: absolute;
+        left: 1em;
+      }
+      .rightLeg {
+        transform-style: preserve-3d;
+        position: absolute;
+        bottom: -1em;
+        left: 0em;
+      }
+      .leftLeg {
+        transform-style: preserve-3d;
+        position: absolute;
+        bottom: -1em;
+        left: 0.5em;
+      }
+      .rightArm b,
+      .leftArm b,
+      .rightLeg b,
+      .leftLeg b {
+        font-size: 5vw;
+      }
+      .walk .rightArm,
+      .walk .leftArm,
+      .walk .rightLeg,
+      .walk .leftLeg {
+        animation: walk linear 1s infinite;
+      }
+      .walk .rightArm,
+      .walk .leftLeg {
+        animation-delay: -0.5s;
+      }
+      @keyframes walk {
+        0% {
+          transform: rotateX(-45deg);
+        }
+        50% {
+          transform: rotateX(45deg);
+        }
+        100% {
+          transform: rotateX(-45deg);
+        }
+      }
+      .run .rightArm,
+      .run .leftArm,
+      .run .rightLeg,
+      .run .leftLeg {
+        animation: run linear 0.5s infinite;
+      }
+      .run .rightArm,
+      .run .leftLeg {
+        animation-delay: -0.25s;
+      }
+      @keyframes run {
+        0% {
+          transform: rotateX(-45deg);
+        }
+        50% {
+          transform: rotateX(45deg);
+        }
+        100% {
+          transform: rotateX(-45deg);
+        }
+      }
+      .jump .rightArm,
+      .jump .leftArm,
+      .jump .rightLeg,
+      .jump .leftLeg {
+        animation: run linear 0.25s;
+      }
+      @keyframes jump {
+        0% {
+          transform: rotateX(-45deg);
+        }
+        50% {
+          transform: rotateX(45deg);
+        }
+        100% {
+          transform: rotateX(-45deg);
+        }
+      }
+      * {
+        transform-style: preserve-3d;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="platform">
+      <div class="guy walk">
+        <div class="head">
+          <b
+            style="transform: rotateX(60deg) rotateY(60deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(60deg) rotateY(120deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(60deg) rotateY(180deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(60deg) rotateY(240deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(60deg) rotateY(300deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(60deg) rotateY(360deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(60deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(120deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(180deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(240deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(300deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(120deg) rotateY(360deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(60deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(120deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            class="front-face"
+            style="transform: rotateX(180deg) rotateY(180deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(240deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(300deg) translateZ(8.5vw)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(360deg) translateZ(8.5vw)"
+          ></b>
+        </div>
+        <!--/head-->
+        <div class="body">
+          <b
+            style="transform: rotateX(90deg) rotateY(90deg) translateZ(0.5em)"
+          ></b>
+          <b
+            style="transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em)"
+          ></b>
+          <b
+            style="transform: rotateX(90deg) rotateY(360deg) translateZ(0.5em)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(180deg) translateZ(0.5em)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(270deg) translateZ(0.5em)"
+          ></b>
+          <b
+            style="transform: rotateX(180deg) rotateY(360deg) translateZ(0.5em)"
+          ></b>
+
+          <div class="rightArm">
+            <b
+              style="transform: rotateX(90deg) rotateY(90deg) translateZ(0.5em)"
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(270deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+          </div>
+          <!--/rightArm-->
+          <div class="leftArm">
+            <b
+              style="transform: rotateX(90deg) rotateY(90deg) translateZ(0.5em)"
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(270deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+          </div>
+          <!--/leftArm-->
+          <div class="rightLeg">
+            <b
+              style="transform: rotateX(90deg) rotateY(90deg) translateZ(0.5em)"
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(270deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+          </div>
+          <!--/rightArm-->
+          <div class="leftLeg">
+            <b
+              style="transform: rotateX(90deg) rotateY(90deg) translateZ(0.5em)"
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(90deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(180deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(270deg) translateZ(0.5em);
+              "
+            ></b>
+            <b
+              style="
+                transform: rotateX(180deg) rotateY(360deg) translateZ(0.5em);
+              "
+            ></b>
+          </div>
+          <!--/leftArm-->
+        </div>
+        <!--/body-->
+      </div>
+      <!--/guy-->
+    </div>
+  </body>
+</html>

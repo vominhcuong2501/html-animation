@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation Card 3D</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .container {
+        position: relative;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.75s ease-out;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+      }
+      .card {
+        transition: all 0.75s;
+        max-width: 700px;
+        border-radius: 30px;
+        padding: 2vh 5%;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2),
+          0px 0px 50px rgba(0, 0, 0, 0.2);
+        position: relative;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      .bike {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5vh;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+      .bike img {
+        width: 80%;
+        z-index: 2;
+        transition: all 0.75s ease-out;
+      }
+      .circle {
+        width: 150px;
+        width: clamp(100px, 10vw, 150px);
+        height: 150px;
+        height: clamp(100px, 10vw, 150px);
+        background: linear-gradient(to right, #443763, #ea3900);
+        position: absolute;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .info {
+        text-align: center;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      .info h1 {
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 0.05em;
+        color: #443763;
+        font-size: 45px;
+        font-size: clamp(45px, 8vw, 75px);
+        transition: all 0.75s ease-out;
+        margin-bottom: 5vh;
+        transform-style: preserve-3d;
+      }
+      .info h3 {
+        font-size: 24px;
+        font-size: clamp(18px, 2vw, 24px);
+        margin-bottom: 7vh;
+        color: #585858;
+        font-weight: lighter;
+        transition: all 0.75s ease-out;
+      }
+      .purchase {
+        margin-bottom: 5vh;
+        transition: all 0.75s ease-out;
+      }
+      .purchase button {
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 0.1em;
+        width: 100%;
+        max-width: 400px;
+        font-size: clamp(18px, 3vw, 25px);
+        padding: 0.8em 3em;
+        background: #443763;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 30px;
+        font-weight: bolder;
+      }
+      .card.has-transform {
+        transition: all 100ms linear;
+      }
+      .title.has-transform {
+        transform: translateZ(150px) !important;
+      }
+      .bike img.has-transform {
+        transform: translateZ(200px) rotateZ(10deg) !important;
+      }
+      .info h3.has-transform {
+        transform: translateZ(125px) !important;
+      }
+      .purchase.has-transform {
+        transform: translateZ(150px) rotateX(20deg) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="bike">
+          <div class="circle"></div>
+          <img
+            src="https://www.elegantthemes.com/blog/wp-content/uploads/2021/04/bike-repair-35-1.png"
+            alt="image"
+          />
+        </div>
+        <div class="info">
+          <h1 class="title">
+            The <span style="color: #ea3900">Divi</span> Bike
+          </h1>
+          <h3>
+            <strong>The One and Only</strong> <br />(Get it while you can)
+          </h3>
+          <div class="purchase">
+            <button>Make an Offer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //   <!-- Inspired by Dev Ed https://github.com/developedbyed/3d-card-effect & https://youtu.be/XK7T3mY1V-w -->
+
+      jQuery(document).ready(function ($) {
+        //Items
+        var $card = $(".card");
+        var $container = $(".container");
+        var $title = $(".title");
+        var $bike = $(".bike img");
+        var $purchase = $(".purchase");
+        var $description = $(".info h3");
+
+        //Moving Animation Event
+        $container.on("mousemove", function (e) {
+          let xAxis = (window.innerWidth / 2 - e.clientX) / 25;
+          let yAxis = (window.innerHeight / 2 - e.clientY) / 25;
+          $card.css("transform", `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`);
+        });
+
+        //Animate on Hover
+        $container.hover(function () {
+          $card.toggleClass("has-transform");
+          $title.toggleClass("has-transform");
+          $bike.toggleClass("has-transform");
+          $purchase.toggleClass("has-transform");
+          $description.toggleClass("has-transform");
+        });
+
+        //Pop Back on mouseleave
+        $container.on("mouseleave", function () {
+          $card.css("transform", `rotateY(0deg) rotateX(0deg)`);
+        });
+      });
+    </script>
+  </body>
+</html>

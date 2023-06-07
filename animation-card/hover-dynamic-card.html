@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hover Card</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        color: #eee;
+        text-decoration: none;
+        font-family: "Poppins", "Helvetica Neue", sans-serif;
+      }
+      body {
+        height: 90vh;
+        background-color: #141414;
+        overflow-x: hidden;
+      }
+      .hero-section {
+        min-height: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        width: 100%;
+      }
+      @media (max-width: 1000px) {
+        .card-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 620px) {
+        .card-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .card {
+        list-style: none;
+        position: relative;
+        transition: all 0.2s ease-out;
+      }
+      .card__bg {
+        position: relative;
+        height: 50vh;
+        min-width: 250px;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 1rem;
+        overflow: hidden;
+        transform: scale(1);
+        transition: all 0.2s ease-out;
+      }
+      .card__bg::after {
+        content: "";
+        background-image: linear-gradient(360deg, black, transparent);
+        height: 150px;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+      }
+      .card__content {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+      }
+      .card__category {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #acacac;
+      }
+      .card:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0px 0px 100px #acacac);
+      }
+      .card-grid:hover > .card:not(:hover).card {
+        filter: brightness(0.8) grayscale(0.6) contrast(1.2) blur(10px);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero-section">
+      <div class="card-grid">
+        <a href="#" class="card">
+          <div
+            class="card__bg"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1659462014159-ea4576af8c8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80);
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Category</p>
+            <h3 class="card__heading">Universe</h3>
+          </div>
+        </a>
+
+        <a href="#" class="card">
+          <div
+            class="card__bg"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1658519309657-e026d3aa85b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80);
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Category</p>
+            <h3 class="card__heading">Helmet</h3>
+          </div>
+        </a>
+
+        <a href="#" class="card">
+          <div
+            class="card__bg"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1659974751348-81f2acd062cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80);
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Category</p>
+            <h3 class="card__heading">Outer Space</h3>
+          </div>
+        </a>
+
+        <a href="#" class="card">
+          <div
+            class="card__bg"
+            style="
+              background-image: url(https://images.unsplash.com/photo-1658248165130-f5cb9194f76b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80);
+            "
+          ></div>
+          <div class="card__content">
+            <p class="card__category">Category</p>
+            <h3 class="card__heading">Pattern</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>

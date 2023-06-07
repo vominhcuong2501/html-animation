@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animation Sphere 3D</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./animation-sphere-3d.css" />
+    <style></style>
+  </head>
+
+  <body>
+    <main>
+      <div class="scene">
+        <div class="wrapper">
+          <div id="sphere" class="sphere"></div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const sphere = document.getElementById("sphere");
+      const rows = [];
+
+      for (i = 0; i < 180; i += 9) {
+        rows.push(
+          `<div class="line" style="transform: rotateY(${i}deg);"></div>`
+        );
+      }
+
+      sphere.innerHTML = rows.join("");
+    </script>
+  </body>
+</html>

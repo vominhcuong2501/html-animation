@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        body {
+            background: #000;
+            padding: 100px;
+            text-align: center;
+            font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+        }
+
+        div {
+            padding: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            padding: 15px 25px;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 2px;
+            z-index: 0;
+            background: #909090;
+            -moz-transition: all 0.6s ease-out 0.0s;
+            -ms-transition: all 0.6s ease-out 0.0s;
+            -o-transition: all 0.6s ease-out 0.0s;
+            -webkit-transition: all 0.6s ease-out 0.0s;
+            transition: all 0.6s ease-out 0.0s;
+        }
+
+        .btn:after,
+        .btn:before {
+            -moz-transition: all 0.4s ease-out 0.0s;
+            -ms-transition: all 0.4s ease-out 0.0s;
+            -o-transition: all 0.4s ease-out 0.0s;
+            -webkit-transition: all 0.4s ease-out 0.0s;
+            transition: all 0.4s ease-out 0.0s;
+        }
+
+        .btn+.btn {
+            margin-left: 25px;
+        }
+
+        .border {
+            background: none;
+            border: solid 2px #fff;
+        }
+
+        .effect1:hover {
+            background: #fff;
+            color: #000
+        }
+
+        .effect2:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #fff
+        }
+
+        .effect2:hover {
+            color: #000
+        }
+
+        .effect2:hover:after {
+            height: 100%;
+        }
+
+        .effect3:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: #fff
+        }
+
+        .effect3:hover {
+            color: #000
+        }
+
+        .effect3:hover:after {
+            height: 100%;
+        }
+
+        .effect4:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #fff
+        }
+
+        .effect4:hover {
+            color: #000
+        }
+
+        .effect4:hover:after {
+            width: 100%;
+        }
+
+        .effect5:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            background: #fff
+        }
+
+        .effect5:hover {
+            color: #000
+        }
+
+        .effect5:hover:after {
+            width: 100%;
+        }
+
+        .effect6:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 0%;
+            background: #fff
+        }
+
+        .effect6:before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 0%;
+            background: #fff
+        }
+
+        .effect6:hover {
+            color: #000
+        }
+
+        .effect6:hover:after {
+            height: 50%;
+        }
+
+        .effect6:hover:before {
+            height: 50%;
+        }
+
+        .effect7:hover {
+            color: #000
+        }
+
+        .effect7:after {
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: scale(1, 0)
+        }
+
+        .effect7:hover:after {
+            transform: scale(1, 1)
+        }
+
+        .effect8:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 00%;
+            height: 100%;
+            background: #fff
+        }
+
+        .effect8:before {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 00%;
+            height: 100%;
+            background: #fff
+        }
+
+        .effect8:hover {
+            color: #000
+        }
+
+        .effect8:hover:after {
+            width: 50%;
+        }
+
+        .effect8:hover:before {
+            width: 50%;
+        }
+
+        .effect9:hover {
+            color: #000
+        }
+
+        .effect9:after {
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: scale(0, 1)
+        }
+
+        .effect9:hover:after {
+            transform: scale(1, 1)
+        }
+
+        .effect10:hover {
+            box-shadow: 0 0 0px 30px #fff inset;
+            color: #000
+        }
+
+        .effect11:hover {
+            color: #000
+        }
+
+        .effect11:after {
+            width: 100%;
+            height: 100%;
+            content: "";
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transform: scale(0)
+        }
+
+        .effect11:hover:after {
+            transform: scale(1)
+        }
+
+        .effect12 {
+            overflow: hidden
+        }
+
+        .effect12:hover {
+            color: #000
+        }
+
+        .effect12:after {
+            width: 100%;
+            height: 100%;
+            content: "";
+            z-index: -1;
+            background: #fff;
+            position: absolute;
+            top: 150%;
+            left: 00%;
+            z-index: -1;
+            transform: skewY(20deg)
+        }
+
+        .effect12:before {
+            width: 100%;
+            height: 100%;
+            content: "";
+            z-index: -1;
+            background: #fff;
+            position: absolute;
+            bottom: 150%;
+            left: 00%;
+            z-index: -1;
+            transform: skewY(20deg)
+        }
+
+        .effect12:hover:after {
+            top: 48%
+        }
+
+        .effect12:hover:before {
+            bottom: 48%
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="" class="btn border effect1">BUTTON</a>
+        <a href="" class="btn border effect2">BUTTON</a>
+        <a href="" class="btn border effect3">BUTTON</a>
+        <a href="" class="btn border effect4">BUTTON</a>
+        <a href="" class="btn border effect5">BUTTON</a>
+    </div>
+    <div>
+        <a href="" class="btn border effect6">BUTTON</a>
+        <a href="" class="btn border effect7">BUTTON</a>
+        <a href="" class="btn border effect8">BUTTON</a>
+        <a href="" class="btn border effect9">BUTTON</a>
+        <a href="" class="btn border effect10">BUTTON</a>
+
+    </div>
+    <div>
+        <a href="" class="btn border effect11">BUTTON</a>
+        <a href="" class="btn border effect12">BUTTON</a>
+
+    </div>
+
+</body>
+
+</html>

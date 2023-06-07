@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, lightblue, whitesmoke, lightblue);
+      }
+
+      .container {
+        text-align: center;
+        margin-top: 25%;
+      }
+
+      .circle:nth-child(1),
+      .circle:nth-child(2),
+      .circle:nth-child(3),
+      .circle:nth-child(4),
+      .circle:nth-child(5) {
+        width: 30px;
+        height: 30px;
+        border-radius: 2em;
+        display: inline-flex;
+        animation: Bounce 1.2s ease-in infinite;
+      }
+
+      .circle:nth-child(1) {
+        background: #f46036;
+      }
+      .circle:nth-child(2) {
+        background: #00a6a6;
+        animation-delay: 0.15s;
+      }
+      .circle:nth-child(3) {
+        background: #e5d942;
+        animation-delay: 0.25s;
+      }
+      .circle:nth-child(4) {
+        background: #2f427a;
+        animation-delay: 0.35s;
+      }
+      .circle:nth-child(5) {
+        background: #333;
+        animation-delay: 0.45s;
+      }
+
+      .panel {
+        width: 300px;
+        height: 2px;
+        border-radius: 2em;
+        background: rgb(29, 27, 5);
+        margin: auto;
+      }
+
+      @keyframes Bounce {
+        0% {
+          transform: translateY(0px);
+        }
+
+        50% {
+          transform: translateY(-155px);
+        }
+
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .credits {
+        margin-top: 50px;
+        padding: 20px;
+        border-radius: 5px;
+        width: 450px;
+        text-align: center;
+        color: gray;
+        font-family: Montserrat, sans-serif;
+      }
+      a {
+        color: gray;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #34495e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+
+      <div class="panel"></div>
+    </div>
+  </body>
+</html>

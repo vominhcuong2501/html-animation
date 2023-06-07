@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Muli", sans-serif;
+        overflow: hidden;
+        margin: 0;
+        background-image: linear-gradient(130deg, #ebfeff, #02576a);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 100%;
+        display: flex;
+        padding: 0 20px;
+      }
+      .slide {
+        height: 80vh;
+        border: #fff solid 1px;
+        border-radius: 15px;
+        margin: 5px;
+        cursor: pointer;
+        color: #fff;
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .slide h3 {
+        position: absolute;
+        font-size: 28px;
+        top: 30px;
+        left: 30px;
+        margin: 0;
+        opacity: 0;
+      }
+      .slide.active {
+        flex: 15;
+      }
+      .slide.active h3 {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out 0.6s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1604503245604-930a6f3513ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
+        "
+      >
+        <h3>Greece, Santorini</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1542021837673-16634fbd380f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+        "
+      >
+        <h3>Brasil</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1609959155450-6957a2398005?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=842&q=80');
+        "
+      >
+        <h3>UAE, Dubai</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1605537964076-3cb0ea2ff329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=832&q=80');
+        "
+      >
+        <h3>Philippines, Palawan</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1614505241498-80a3ec936595?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=911&q=80');
+        "
+      >
+        <h3>Maldives</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+        "
+      >
+        <h3>France, Paris</h3>
+      </div>
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=867&q=80');
+        "
+      >
+        <h3>Mexico, Cancun</h3>
+      </div>
+    </div>
+    <script>
+      function slidesPlugin(activeSlide = 0) {
+        const slides = document.querySelectorAll(".slide");
+
+        slides[activeSlide].classList.add("active");
+
+        for (const slide of slides) {
+          slide.addEventListener("click", () => {
+            removeActiveClasses();
+
+            slide.classList.add("active");
+          });
+        }
+
+        function removeActiveClasses() {
+          slides.forEach((slide) => {
+            slide.classList.remove("active");
+          });
+        }
+      }
+      slidesPlugin();
+    </script>
+  </body>
+</html>

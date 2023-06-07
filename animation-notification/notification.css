@@ -1,0 +1,51 @@
+h2 {
+  background: #8e64a5;
+  background: linear-gradient(to right, #8e64a5 0%, #a38ebe 50%, #8e64a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.swalbtn-content {
+  display: grid;
+  justify-content: center;
+  gap: 12px;
+}
+
+.swal-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.icon-btn {
+  position: relative;
+}
+button {
+  background: rgb(112, 102, 224);
+  background: linear-gradient(
+    90deg,
+    rgba(112, 102, 224, 1) 0%,
+    rgba(102, 125, 224, 1) 35%,
+    rgba(145, 102, 224, 1) 100%
+  );
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 30px;
+  color: #fff;
+  transition: 0.2s all ease-in-out;
+}
+button:hover {
+  background: rgb(145, 102, 224);
+  background: linear-gradient(
+    90deg,
+    rgba(145, 102, 224, 1) 100%,
+    rgba(102, 125, 224, 1) 51%,
+    rgba(112, 102, 224, 1) 100%
+  );
+  filter: drop-shadow(0px 0px 9px #00000050);
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./notification.css">
+</head>
+
+<body>
+    <div class="swal-heading text-center p-3 fw-bold">
+        <h2>SweetAlert2 Examples</h2>
+    </div>
+    <div class="swalbtn-content">
+        <div class="swal-item">
+            <button onclick="basicMessage()">Click Me</button>
+            <span>Basic Message</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="textUnder()">Click Me</button>
+            <span>Title with a Text Under</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="modalTitle()">Click Me</button>
+            <span>Swal with Footer and links</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="withHtml()">Click Me</button>
+            <span>HTML description and buttons with labels</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="dialog()">Click Me</button>
+            <span>Dialog with Buttons</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="animatePopup()">Click Me</button>
+            <span>Swal with Animation - animate.css</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="confirmBtn()">Click Me</button>
+            <span>With Confirm Button</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="parameterBtn()">Click Me</button>
+            <span>passing a parameter</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="withImage()">Click Me</button>
+            <span>With a Custom Image</span>
+        </div>
+        <div class="swal-item">
+            <button onclick="swalTimer()">Click Me</button>
+            <span>A message with Auto Close Timer</span>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="icons-heading text-center pt-5 p-3">
+        <h2>Icons Available for Swal2</h2>
+        <div class="icons-container">
+            <div class="icons-item">
+                <div class="swal2-icon swal2-warning swal2-icon-show" style="display: flex;">
+                    <div class="swal2-icon-content">!</div>
+                </div>
+                <div class="icon-btn">
+                    <button onclick="warningIcon()">Try Me!</button>
+                </div>
+            </div>
+            <div class="icons-item">
+                <div class="swal2-icon swal2-error swal2-icon-show" style="display: flex;"><span class="swal2-x-mark">
+                        <span class="swal2-x-mark-line-left"></span>
+                        <span class="swal2-x-mark-line-right"></span>
+                    </span>
+                </div>
+                <div class="icon-btn">
+                    <button onclick="errorIcon()">Try Me!</button>
+                </div>
+            </div>
+            <div class="icons-item">
+                <div class="swal2-icon swal2-success swal2-icon-show" style="display: flex;">
+                    <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
+                    <span class="swal2-success-line-tip"></span> <span class="swal2-success-line-long"></span>
+                    <div class="swal2-success-ring"></div>
+                    <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
+                    <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
+
+                </div>
+                <div class="icon-btn">
+                    <button onclick="successIcon()">Try Me!</button>
+                </div>
+            </div>
+            <div class="icons-item">
+                <div class="swal2-icon swal2-info swal2-icon-show" style="display: flex;">
+                    <div class="swal2-icon-content">i</div>
+                </div>
+                <div class="icon-btn">
+                    <button onclick="infoIcon()">Try Me!</button>
+                </div>
+            </div>
+            <div class="icons-item">
+                <div class="swal2-icon swal2-question swal2-icon-show" style="display: flex;">
+                    <div class="swal2-icon-content">?</div>
+                </div>
+                <div class="icon-btn">
+                    <button onclick="questionIcon()">Try Me!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="./notification.js"></script>
+</body>
+
+</html>

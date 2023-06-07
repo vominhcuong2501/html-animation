@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./button.css">
+</head>
+
+<body>
+    <h1>Animated Button</h1>
+    <div class="button">
+
+        <!--      button style 1  -->
+        <div class="box">
+            <button class="button-1" role="button">Button 1</button>
+        </div>
+
+        <!--      button style 2  -->
+        <div class="box">
+            <button class="button-2" role="button">Button 2</button>
+        </div>
+
+        <!-- button style 3 -->
+        <div class="box">
+            <button class="button-3" role="button">Button 3</button>
+        </div>
+
+        <!-- button style 4 -->
+        <div class="box">
+            <button class="button-4" role="button">Button 4</button>
+        </div>
+
+        <!-- button style 5 -->
+        <div class="box">
+            <button class="button-5" role="button">Button 5</button>
+        </div>
+
+        <!-- button style 6 -->
+        <div class="box">
+            <button class="button-6" role="button">Button 6</button>
+        </div>
+
+        <!-- button style 7 -->
+        <div class="box">
+            <button class="button-7" role="button"><span class="text">Button 7</span></button>
+        </div>
+
+        <!-- button style 8 -->
+        <div class="box">
+            <button class="button-8" role="button">Button 8</button>
+        </div>
+
+        <!-- button style 9 -->
+        <div class="box">
+            <button class="button-9-pushable" role="button">
+                <span class="button-9-shadow"></span>
+                <span class="button-9-edge"></span>
+                <span class="button-9-front text">
+                    Button 9
+                </span>
+            </button>
+        </div>
+
+        <!-- button style 10 -->
+        <div class="box">
+            <button class=" Button10">Button 10</button>
+        </div>
+
+        <!-- button style 11 -->
+        <div class="box">
+            <a class="button11" href="#0">Button 11</a>
+        </div>
+
+        <!-- button style 12 -->
+        <div class="box">
+            <div class="buttons">
+                <button class="blob-btn">
+                    Button 12
+                    <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                            <span class="blob-btn__blob"></span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- button style 13-->
+        <div class="box">
+            <button class="button13">Button 13</button>
+        </div>
+
+        <!-- button style 14-->
+        <div class="box">
+            <a href="#!" class="button14 btn-white btn-animate">Button 14</a>
+        </div>
+
+        <!-- button style 15-->
+        <div class="box">
+            <button class="btn15">
+                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                </svg>
+                <span>Button 15</span>
+            </button>
+        </div>
+
+        <!-- button style 16-->
+        <div class="box">
+            <a href="#!" class="button16" id="button16">Button 16</a>
+        </div>
+
+        <!-- button style 17-->
+        <div class="box">
+            <a href="#" class="btn-flip" data-back="Back" data-front="Button 17"></a>
+        </div>
+
+        <!-- button style 18-->
+        <div class="box">
+            <a href="#!" class="button18"><span>Button 18</span></a>
+        </div>
+
+        <!-- button style 19-->
+        <div class="box">
+            <a href="#" class="btn19 btn-bubble">Button 19</a>
+        </div>
+
+        <!-- button style 20-->
+        <div class="box">
+            <a href="#!" class="button20">
+                Button 20
+            </a>
+            <!-- link js file https://code.jquery.com/jquery-latest.min.js -->
+        </div>
+
+        <!-- button style 21-->
+        <div class="box">
+            <button class="btn21">
+                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                </svg>
+                <span>Button 21</span>
+            </button>
+        </div>
+
+        <!-- button style 22-->
+        <div class="box">
+            <div class="btn22">
+                <a href="#">Button 22</a>
+            </div>
+        </div>
+
+        <!-- button style 23-->
+        <div class="box">
+            <button class="btn-23">Button 23</button>
+        </div>
+
+        <!-- button style 24-->
+        <div class="box">
+            <button class="btn-24"><span>Button 24</span></button>
+        </div>
+
+        <!-- button style 25-->
+        <div class="box">
+            <button class="btn-25">Button 25</button>
+        </div>
+
+        <!-- button style 26-->
+        <div class="box">
+            <div class="button26" id="button-26">
+                <div id="translate"></div>
+                <a href="#">Button 26</a>
+            </div>
+        </div>
+
+        <!-- button style 27-->
+        <div class="box">
+            <button class="btn-27">Button 27<div class="dot"></div></button>
+        </div>
+        <footer>
+            <p>Soumitra Ghosh </p>
+        </footer>
+        <script>/*  button style 10*/
+            var animateButton = function (e) {
+
+                e.preventDefault;
+                //reset animation
+                e.target.classList.remove('animate');
+
+                e.target.classList.add('animate');
+                setTimeout(function () {
+                    e.target.classList.remove('animate');
+                }, 700);
+            };
+
+            var bubblyButtons = document.getElementsByClassName("Button10");
+
+            for (var i = 0; i < bubblyButtons.length; i++) {
+                bubblyButtons[i].addEventListener('click', animateButton, false);
+            }
+
+
+            /*  button style 16*/
+            let button = document.getElementById("button16");
+
+            button.addEventListener('mousemove', (e) => {
+                x = e.offsetX;
+                y = e.offsetY;
+                button.style.setProperty('--mouse-x', x + "px");
+                button.style.setProperty('--mouse-y', y + "px");
+            });
+
+
+            /*  button style 20*/
+            $(window).ready(function () {
+                $(".button20").wrapInner('<div class=botontext></div>');
+
+                $(".botontext").clone().appendTo($(".button20"));
+
+                $(".button20").append('<span class="twist"></span><span class="twist"></span><span class="twist"></span><span class="twist"></span>');
+
+                $(".twist").css("width", "20%").css("width", "+=3px");
+            });
+        </script>
+
+</body>
+
+</html>

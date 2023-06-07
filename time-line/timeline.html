@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- link codepen timeline:  https://codepen.io/JHamilton111/pen/dyVORXJ -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        --color: rgba(30, 30, 30);
+        --bgColor: rgba(245, 245, 245);
+        min-height: 100vh;
+        display: grid;
+        align-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        font-family: "Poppins", sans-serif;
+        color: var(--color);
+        background: var(--bgColor);
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        --col-gap: 2rem;
+        --row-gap: 2rem;
+        --line-w: 0.25rem;
+        display: grid;
+        grid-template-columns: var(--line-w) 1fr;
+        grid-auto-columns: max-content;
+        column-gap: var(--col-gap);
+        list-style: none;
+        width: min(60rem, 90%);
+        margin-inline: auto;
+      }
+
+      /* line */
+      ul::before {
+        content: "";
+        grid-column: 1;
+        grid-row: 1 / span 20;
+        background: rgb(225, 225, 225);
+        border-radius: calc(var(--line-w) / 2);
+      }
+
+      /* columns*/
+
+      /* row gaps */
+      ul li:not(:last-child) {
+        margin-bottom: var(--row-gap);
+      }
+
+      /* card */
+      ul li {
+        grid-column: 2;
+        --inlineP: 1.5rem;
+        margin-inline: var(--inlineP);
+        grid-row: span 2;
+        display: grid;
+        grid-template-rows: min-content min-content min-content;
+      }
+
+      /* date */
+      ul li .date {
+        --dateH: 3rem;
+        height: var(--dateH);
+        margin-inline: calc(var(--inlineP) * -1);
+
+        text-align: center;
+        background-color: var(--accent-color);
+
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 700;
+
+        display: grid;
+        place-content: center;
+        position: relative;
+
+        border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+      }
+
+      /* date flap */
+      ul li .date::before {
+        content: "";
+        width: var(--inlineP);
+        aspect-ratio: 1;
+        background: var(--accent-color);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+        position: absolute;
+        top: 100%;
+
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        right: 0;
+      }
+
+      /* circle */
+      ul li .date::after {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        aspect-ratio: 1;
+        background: var(--bgColor);
+        border: 0.3rem solid var(--accent-color);
+        border-radius: 50%;
+        top: 50%;
+
+        transform: translate(50%, -50%);
+        right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+      }
+
+      /* title descr */
+      ul li .title,
+      ul li .descr {
+        background: var(--bgColor);
+        position: relative;
+        padding-inline: 1.5rem;
+      }
+      ul li .title {
+        overflow: hidden;
+        padding-block-start: 1.5rem;
+        padding-block-end: 1rem;
+        font-weight: 500;
+      }
+      ul li .descr {
+        padding-block-end: 1.5rem;
+        font-weight: 300;
+      }
+
+      /* shadows */
+      ul li .title::before,
+      ul li .descr::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 0.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        left: 50%;
+        border-radius: 50%;
+        filter: blur(4px);
+        transform: translate(-50%, 50%);
+      }
+      ul li .title::before {
+        bottom: calc(100% + 0.125rem);
+      }
+
+      ul li .descr::before {
+        z-index: -1;
+        bottom: 0.25rem;
+      }
+
+      @media (min-width: 40rem) {
+        ul {
+          grid-template-columns: 1fr var(--line-w) 1fr;
+        }
+        ul::before {
+          grid-column: 2;
+        }
+        ul li:nth-child(odd) {
+          grid-column: 1;
+        }
+        ul li:nth-child(even) {
+          grid-column: 3;
+        }
+
+        /* start second card */
+        ul li:nth-child(2) {
+          grid-row: 2/4;
+        }
+
+        ul li:nth-child(odd) .date::before {
+          clip-path: polygon(0 0, 100% 0, 100% 100%);
+          left: 0;
+        }
+
+        ul li:nth-child(odd) .date::after {
+          transform: translate(-50%, -50%);
+          left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+        }
+        ul li:nth-child(odd) .date {
+          border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+        }
+      }
+
+      .credits {
+        margin-top: 1rem;
+        text-align: right;
+      }
+      .credits a {
+        color: var(--color);
+      }
+    </style>
+    <!-- <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f9df10;
+      }
+
+      .flip-card {
+        perspective: 1000px;
+        cursor: pointer;
+        position: relative;
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+          box-shadow: 0px 0px 10px 1px #0000000a;
+          border-radius: 10px;
+          .flip-card-front,
+          .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .flip-card-front {
+            background: #50b6bb;
+          }
+
+          .flip-card-back {
+            transform: rotateY(180deg);
+            background: #45969b;
+            display: flex;
+            align-items: center;
+            p {
+              color: white;
+            }
+          }
+          .page-corner {
+            color: white;
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            width: 57px;
+            height: 57px;
+            border-top: 57px #45969b;
+            border-right: 57px solid transparent;
+            border-radius: 10px 0px 0px 0px;
+            background: #45969b;
+            i {
+              top: 0;
+              left: 50%;
+              margin-top: 10px;
+              position: absolute;
+              margin-left: 10px;
+              font-size: 16px;
+              opacity: 0.7;
+            }
+          }
+
+          .flip-card-front:after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            right: 0%;
+            width: 0px;
+            height: 0px;
+            border-bottom: 78px solid #f9df10;
+            border-left: 78px solid transparent;
+            margin-bottom: -10px;
+            margin-right: -10px;
+          }
+        }
+      }
+
+      .flip-card.active .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card:hover .flip-card-front {
+        background: darken(#50b6bb, 5%);
+      }
+
+      h1 {
+        font-size: 30px;
+        font-family: "Shrikhand", cursive;
+        color: #f8f8f8;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0px 0px 30px 0px;
+        color: #50b6bb;
+        text-align: center;
+      }
+
+      .steps {
+        display: flex;
+        max-width: 700px;
+        margin: auto;
+        .steps_one,
+        .steps_two {
+          display: grid;
+          grid-template-rows: repeat(6, 2fr);
+          flex: 1 0 auto;
+          .step {
+            grid-row: span 2;
+            margin: 15px 0px;
+            height: 190px;
+          }
+          h4 {
+            margin: 0px;
+            line-height: 100%;
+            font-family: "Shrikhand", cursive;
+            color: #f8f8f8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 25px;
+          }
+          p {
+            margin-bottom: 0;
+            font-size: font-size("small");
+          }
+          img {
+            width: auto;
+            margin: auto auto 15px auto;
+            max-height: 95px;
+            max-width: 40%;
+          }
+        }
+        .steps_one {
+          border-right: 2px solid #ceb912;
+          padding: 1em 2em 1em 0em;
+          .step_number {
+            left: 100%;
+            margin-left: 21px;
+          }
+        }
+        .steps_two {
+          padding: 1em 0em 1em 2em;
+          #second {
+            grid-row-start: 2;
+            grid-row-end: 4;
+          }
+          #fourth {
+            grid-row-start: 4;
+            grid-row-end: 6;
+          }
+          .step_number {
+            right: 100%;
+            margin-right: 21px;
+          }
+        }
+      }
+      .step_number {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: black;
+        background: #50b6bb;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: #f8f8f8 7px solid;
+        box-shadow: 0px 0px 1px 1px #ceb912;
+      }
+
+      .flip-card:hover .step_number {
+        border: #50b6bb 7px solid;
+        background: #f8f8f8;
+      }
+    </style> -->
+  </head>
+  <body>
+    <h1>UL timeline cards</h1>
+    <ul>
+      <li style="--accent-color: #41516c">
+        <div class="date">2002</div>
+        <div class="title">Title 1</div>
+        <div class="descr">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque
+          hic quibusdam fugiat est numquam harum, accusamus suscipit consequatur
+          laboriosam!
+        </div>
+      </li>
+      <li style="--accent-color: #fbca3e">
+        <div class="date">2007</div>
+        <div class="title">Title 2</div>
+        <div class="descr">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
+          adipisci nobis nostrum vero nihil veniam.
+        </div>
+      </li>
+      <li style="--accent-color: #e24a68">
+        <div class="date">2012</div>
+        <div class="title">Title 3</div>
+        <div class="descr">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima
+          consequuntur soluta placeat iure totam commodi repellendus ea
+          delectus, libero fugit quod reprehenderit, sequi quo, et dolorum saepe
+          nulla hic.
+        </div>
+      </li>
+      <li style="--accent-color: #1b5f8c">
+        <div class="date">2017</div>
+        <div class="title">Title 4</div>
+        <div class="descr">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
+          cumque.
+        </div>
+      </li>
+      <li style="--accent-color: #4cadad">
+        <div class="date">2022</div>
+        <div class="title">Title 5</div>
+        <div class="descr">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.
+        </div>
+      </li>
+      <li style="--accent-color: aqua">
+        <div class="date">2022</div>
+        <div class="title">Title 6</div>
+        <div class="descr">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.
+        </div>
+      </li>
+    </ul>
+
+    <!-- <div class="steps_box">
+      <div class="steps imgfix">
+        <div class="steps_one">
+          <div id="first" class="step flip-card">
+            <span class="step_number"></span>
+            <div class="flip-card-inner tiny_bounce">
+              <div class="flip-card-front">
+                <h4>First Event</h4>
+                <span class="page-corner">
+                  <i class="fas fa-long-arrow-alt-right" aria hidden="true"></i>
+                </span>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                  porttitor, nisi eu imperdiet bibendum, purus eros auctor
+                  tortor, eget placerat risus ante vitae justo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="third" class="step flip-card">
+            <span class="step_number"></span>
+            <div class="flip-card-inner tiny_bounce">
+              <div class="flip-card-front">
+                <h4>Third Event</h4>
+                <span class="page-corner">
+                  <i class="fas fa-long-arrow-alt-right" aria hidden="true"></i>
+                </span>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                  porttitor, nisi eu imperdiet bibendum, purus eros auctor
+                  tortor, eget placerat risus ante vitae justo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="fifth" class="step flip-card">
+            <span class="step_number"></span>
+            <div class="flip-card-inner tiny_bounce">
+              <div class="flip-card-front">
+                <h4>Fifth Event</h4>
+                <span class="page-corner">
+                  <i class="fas fa-long-arrow-alt-right" aria hidden="true"></i>
+                </span>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                  porttitor, nisi eu imperdiet bibendum, purus eros auctor
+                  tortor, eget placerat risus ante vitae justo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="steps_two">
+          <div id="second" class="step flip-card">
+            <span class="step_number"></span>
+            <div class="flip-card-inner tiny_bounce">
+              <div class="flip-card-front">
+                <h4>Second Event</h4>
+                <span class="page-corner">
+                  <i class="fas fa-long-arrow-alt-right" aria hidden="true"></i>
+                </span>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                  porttitor, nisi eu imperdiet bibendum, purus eros auctor
+                  tortor, eget placerat risus ante vitae justo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="fourth" class="step flip-card">
+            <span class="step_number"></span>
+            <div class="flip-card-inner tiny_bounce">
+              <div class="flip-card-front">
+                <h4>Fourth Event</h4>
+                <span class="page-corner">
+                  <i class="fas fa-long-arrow-alt-right" aria hidden="true"></i>
+                </span>
+              </div>
+              <div class="flip-card-back">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+                  porttitor, nisi eu imperdiet bibendum, purus eros auctor
+                  tortor, eget placerat risus ante vitae justo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const flipCards = document.querySelectorAll(".flip-card");
+
+      function flipCard(card) {
+        card.addEventListener("click", function (event) {
+          card.classList.contains("active")
+            ? card.classList.remove("active")
+            : card.classList.add("active");
+        });
+      }
+
+      flipCards.forEach(flipCard);
+    </script>
+  </body>
+</html>

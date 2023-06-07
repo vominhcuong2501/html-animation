@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      ul {
+        position: relative;
+        width: 330px;
+        height: 50px;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 15px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.5s;
+      }
+
+      a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      li:nth-child(1) {
+        z-index: 1;
+        background: #333;
+      }
+
+      li.active:nth-child(2) {
+        left: 50px;
+        background: #3b5998;
+        transition-delay: 200ms;
+      }
+
+      li.active:nth-child(3) {
+        left: 100px;
+        background: #55acee;
+        transition-delay: 400ms;
+      }
+
+      li.active:nth-child(4) {
+        left: 150px;
+        background: #e95950;
+        transition-delay: 600ms;
+      }
+
+      li.active:nth-child(5) {
+        left: 200px;
+        background: #cb2027;
+        transition-delay: 800ms;
+      }
+
+      li.active:nth-child(6) {
+        left: 250px;
+        background: #dd4b39;
+        transition-delay: 1000ms;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul>
+        <li>
+          <a href=""><i class="fa fa-share-alt"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-pinterest-p"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-google-plus"></i></a>
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $("li:nth-child(1)").on("click", function () {
+        $("li").toggleClass("active");
+      });
+
+      $("a").on("click", function (e) {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

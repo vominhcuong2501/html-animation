@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* make sure all absolutely positioned elements are contained within a single container */
+.container {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -20vh);
+  color: #fff;
+  z-index: 1;
+  font-family: "Warnes", cursive;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+    0 0 90px #0cf, 0 0 103px #0cf, 0 0 150px #0cf;
+}
+
+.earth {
+  font-size: 200%;
+}
+
+/* only animate the last letter -- why isn't there a ::last-letter selector!? */
+.lastLetter {
+  animation: 3s ease-in-out 0.5s infinite glitch;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* trying to make this literally as ugly as possible */
+.disclaimer {
+  position: absolute;
+  left: 0;
+  bottom: -100vh;
+  font-size: 0.7rem;
+  color: #edf7fb;
+  width: 100%;
+  x-index: 1;
+}
+
+/* stuttering neon light effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+      0 0 90px #0cf;
+  }
+  12% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 82px #0cf, 0 0 90px #0cf;
+  }
+  15% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+      0 0 90px #0cf;
+  }
+  24% {
+    text-shadow: 0 0 0 transparent;
+  }
+  46% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+      0 0 90px #0cf;
+  }
+  56% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 82px #0cf, 0 0 90px #0cf;
+  }
+  67% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+      0 0 90px #0cf;
+  }
+  80% {
+    text-shadow: 0 0 0 transparent;
+  }
+  90% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 82px #0cf,
+      0 0 90px #0cf;
+  }
+  100% {
+    text-shadow: 0 0 0 transparent;
+  }
+}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        :root {
+            --bg: rgb(59, 55, 62);
+            --primary: rgb(45, 211, 208);
+            --distance: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: var(--bg);
+        }
+
+        .nav {
+            position: relative;
+        }
+
+        .nav-toggle {
+            position: absolute;
+            top: -2.5rem;
+            left: 2rem;
+            width: 5rem;
+            height: 5rem;
+            background-color: var(--primary);
+            border: 8px solid var(--bg);
+            border-radius: 50%;
+            transform: translateX(var(--distance));
+            transition: transform 0.8s;
+        }
+
+        .nav-mask {
+            position: relative;
+        }
+
+        .nav-mask::before,
+        .nav-mask::after {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .nav-mask::before {
+            left: -1.5rem;
+            top: 2rem;
+            border-top-right-radius: 1.25rem;
+            box-shadow: 3px -5px var(--bg);
+        }
+
+        .nav-mask::after {
+            right: -1.5rem;
+            top: 2rem;
+            border-top-left-radius: 1.25rem;
+            box-shadow: -3px -5px var(--bg);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+            background-color: white;
+            padding: 0 2rem;
+            border-radius: 1em;
+        }
+
+        .nav-tab {
+            width: 5rem;
+            height: 5rem;
+            display: grid;
+            place-items: center;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--bg);
+            font: 400 0.8rem poppins, helvetica, sans-serif;
+        }
+
+        .nav-icon {
+            font-size: 2rem;
+            transition: transform 0.8s;
+        }
+
+        .nav-info {
+            position: absolute;
+            transform: translateY(2.5rem);
+            visibility: hidden;
+        }
+
+        .active.nav-icon {
+            transform: translateY(-2.5rem);
+        }
+
+        .active.nav-info {
+            visibility: visible;
+            transform: translateY(1.5rem);
+            transition: transform 0.8s, visibility 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <main class='nav'>
+        <div class='nav-toggle'>
+            <div class='nav-mask'></div>
+        </div>
+        <ul class='nav-menu'>
+            <li class='nav-tab' data-tab='0'>
+                <a href='#' class='nav-link'>
+                    <ion-icon name="home-outline" class='nav-icon'></ion-icon>
+                    <span class='nav-info'>Home</span>
+                </a>
+            </li>
+            <li class='nav-tab' data-tab='1'>
+                <a href='#' class='nav-link'>
+                    <ion-icon name="earth-outline" class='nav-icon'></ion-icon>
+                    <span class='nav-info'>Destination</span>
+                </a>
+            </li>
+            <li class='nav-tab' data-tab='2'>
+                <a href='#' class='nav-link'>
+                    <ion-icon name="airplane-outline" class='nav-icon'></ion-icon>
+                    <span class='nav-info'>Airline</span>
+                </a>
+            </li>
+            <li class='nav-tab' data-tab='3'>
+                <a href='#' class='nav-link'>
+                    <ion-icon name="calendar-outline" class='nav-icon'></ion-icon>
+                    <span class='nav-info'>Booking</span>
+                </a>
+            </li>
+            <li class='nav-tab' data-tab='4'>
+                <a href='#' class='nav-link'>
+                    <ion-icon name="cart-outline" class='nav-icon'></ion-icon>
+                    <span class='nav-info'>Cart</span>
+                </a>
+            </li>
+        </ul>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>const toggle = document.querySelector('.nav-toggle');
+        const tabs = document.querySelectorAll('.nav-tab');
+        const icons = document.querySelectorAll('.nav-icon');
+        const infos = document.querySelectorAll('.nav-info');
+
+        function reset() {
+            icons.forEach((icon, i) => {
+                icon.classList.remove('active');
+                infos[i].classList.remove('active');
+            });
+        }
+
+        function activate(index) {
+            icons[index].classList.add('active');
+            infos[index].classList.add('active');
+        }
+
+        function scroll() {
+            const i = this.dataset.tab;
+            toggle.style.setProperty('--distance', `${i}00%`)
+            reset();
+            activate(i);
+        }
+
+        window.addEventListener('load', activate(0), false);
+        tabs.forEach((tab) => tab.addEventListener('click', scroll, false));</script>
+</body>
+
+</html>

@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #eee;
+            height: 100vh;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        h1,
+        h3,
+        p {
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: normal;
+            color: #778;
+            margin: 0;
+            padding: 20px 0;
+
+        }
+
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 70%;
+            margin: 0 auto;
+
+        }
+
+        .icon-link {
+            display: flex;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 50%;
+            margin: 15px 15px;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.09);
+            transition: transform 0.5s;
+        }
+
+        .cont-icon {
+            color: #777;
+            font-size: 25px;
+            transition: transform 0.5s;
+        }
+
+        .icon-link:hover {
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset 4px 4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+            transform: translateY(2px);
+        }
+
+        .icon-link:hover .cont-icon {
+            transform: scale(0.95);
+        }
+
+        @media only screen and (max-width: 800px) {
+            .contact-list {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        figure {
+
+            overflow-x: auto;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0 5px;
+
+        }
+
+        code {
+            color: #008080;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .code01 {
+            color: #00009e;
+        }
+
+        .code02 {
+            color: #008080;
+        }
+
+        .code03 {
+            color: #dd1144
+        }
+
+        figure::-webkit-scrollbar {
+            height: 7px !important;
+        }
+
+        /* Track */
+        figure::-webkit-scrollbar-track {
+            background: #f8f8f8;
+            border-radius: 0px;
+        }
+
+        /* Handle */
+        figure::-webkit-scrollbar-thumb {
+            background: #d5d7de;
+            border-radius: 0px;
+        }
+
+        .code-box {
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 0 10px 100px 10px;
+        }
+
+        .copyBtn {
+            background: #f8f8f8;
+            border-left: 1px solid #d5d7de;
+            border-top: 0;
+            border-right: 1px solid #d5d7de;
+            border-bottom: 0;
+            outline: none;
+            border-radius: 0;
+            color: #333;
+            cursor: pointer;
+            position: relative;
+            z-index: 2
+        }
+
+        .copyBtn:after {
+            content: "Copied";
+            position: absolute;
+            top: 100%;
+            left: -4px;
+            padding: 10px 5px 5px 5px;
+            background: #333;
+            color: #d5d7de;
+            border-radius: 5px;
+            clip-path: polygon(50% 0, 75% 25%, 100% 25%, 100% 100%, 0 100%, 0 25%, 25% 25%);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-100%);
+            z-index: 0;
+            transition: transform 0.5s ease;
+
+        }
+
+        .copyBtn:focus:after {
+            animation: topBottom 1s linear;
+        }
+
+        @keyframes topBottom {
+            0% {
+                transform: translateY(-70%);
+                opacity: 0.3;
+            }
+
+            30% {
+                transform: translateY(-50%);
+                opacity: 0.9;
+            }
+
+            70% {
+                transform: translateY(-70%);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-80%);
+                opacity: 0;
+            }
+        }
+
+
+        .icon-link:hover .fa-facebook {
+            color: #4267b2;
+        }
+
+        .icon-link:hover .fa-instagram {
+            color: #da5556;
+        }
+
+        .icon-link:hover .fa-twitter {
+            color: #38b8ff;
+        }
+
+        .icon-link:hover .fa-telegram {
+            color: #28a1da;
+        }
+
+        .icon-link:hover .fa-viber {
+            color: #6a3891;
+        }
+
+        .icon-link:hover .fa-github {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-youtube {
+            color: #fe0000;
+        }
+
+        .icon-link:hover .fa-whatsapp {
+            color: #19930a;
+        }
+
+        .icon-link:hover .fa-envelope {
+            color: #d54b3d;
+        }
+
+        .icon-link:hover .fa-facebook-messenger {
+            color: #009cfd;
+        }
+
+        .icon-link:hover .fa-linkedin {
+            color: #0077b5;
+        }
+
+        .icon-link:hover .fa-codepen {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-google {
+            color: #fabb05;
+        }
+
+        .icon-link:hover .fa-google-play {
+            color: #00c0ff;
+        }
+
+        .icon-link:hover .fa-cc-visa {
+            color: #004c9a;
+        }
+
+        .icon-link:hover .fa-paypal {
+            color: #012069;
+        }
+
+        .icon-link:hover .fa-user {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-users {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-amazon {
+            color: #040404;
+        }
+
+        .icon-link:hover .fa-tiktok {
+            color: #ff004f;
+        }
+
+        .icon-link:hover .fa-pinterest {
+            color: #bd081b;
+        }
+
+        .icon-link:hover .fa-file-code {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-yandex-international {
+            color: #f00;
+        }
+
+        .icon-link:hover .fa-firefox {
+            color: #fea346;
+        }
+
+        .icon-link:hover .fa-opera {
+            color: #e81528;
+        }
+
+        .icon-link:hover .fa-windows {
+            color: #2376bc;
+        }
+
+        .icon-link:hover .fa-apple {
+            color: #666;
+        }
+
+        .icon-link:hover .fa-university {
+            color: #000000;
+        }
+
+        .icon-link:hover .fa-music {
+            color: #d078b9;
+        }
+
+        .icon-link:hover .fa-font-awesome {
+            color: #4c6ef5;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Animation Buttons WiTh HTML CSS & Font Awesome</h1>
+
+    <div class="contact-list">
+        <a class="icon-link" href="#">
+            <i class="fab fa-facebook cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-instagram cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-twitter cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-telegram cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-viber cont-icon"></i>
+        </a>
+        <a class="icon-link" target="_blank" href="https://ruben-vardanyan.github.io/Buttons/index.html">
+            <i class="fab fa-github cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-youtube cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-whatsapp cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas fa-envelope cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-facebook-messenger cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-linkedin cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-codepen cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab  fa-google cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab  fa-google-play cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab  fa-cc-visa cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-paypal cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas  fa-user cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas  fa-users cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab   fa-amazon cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab   fa-tiktok cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fab fa-pinterest cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas fa-file-code cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab  fa-yandex-international cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab  fa-firefox cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-opera cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-windows cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-apple cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas fa-university cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fas fa-music cont-icon"></i>
+        </a>
+        <a class="icon-link" href="#">
+            <i class="fab fa-font-awesome cont-icon"></i>
+        </a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background: #191919;
+        overflow: hidden;
+      }
+      .row {
+        min-width: 280px;
+        max-width: 500px;
+        flex: 1;
+      }
+      .card {
+        height: 300px;
+        background: rgb(173, 173, 173);
+        position: relative;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        margin: 3vw 1.5vw;
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .content {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 80px;
+        padding: 1rem;
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(25px);
+        border-radius: 0;
+        transform: scale(1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+      }
+      .content p {
+        font-size: 0.8em;
+      }
+      .card:hover .content {
+        transform: scale(0.95);
+        bottom: 6px;
+        height: 170px;
+        border-radius: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1638937480132-ebdc0219a4af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+          alt=""
+        />
+        <div class="content">
+          <h2>Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            quas ullam vel fugiat soluta? Doloremque, quod vel? Delectus
+            dignissimos voluptatem dolorem amet, voluptatibus iste asperiores!
+            In tempore deserunt vero eaque.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1660315999670-1d5beab50d96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+          alt=""
+        />
+        <div class="content">
+          <h2>Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            quas ullam vel fugiat soluta? Doloremque, quod vel? Delectus
+            dignissimos voluptatem dolorem amet, voluptatibus iste asperiores!
+            In tempore deserunt vero eaque.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1679589102491-bc489d798a5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          alt=""
+        />
+        <div class="content">
+          <h2>Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            quas ullam vel fugiat soluta? Doloremque, quod vel? Delectus
+            dignissimos voluptatem dolorem amet, voluptatibus iste asperiores!
+            In tempore deserunt vero eaque.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1661768261898-e2b2a6083092?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+          alt=""
+        />
+        <div class="content">
+          <h2>Heading</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            quas ullam vel fugiat soluta? Doloremque, quod vel? Delectus
+            dignissimos voluptatem dolorem amet, voluptatibus iste asperiores!
+            In tempore deserunt vero eaque.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
