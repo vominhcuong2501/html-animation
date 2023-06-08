@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      /* Import Shadows Into Light - Google Fonts */
+
+      @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+      :root {
+        --clr-black: #141414;
+        --clr-white: #fdfdfd;
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Shadows Into Light", cursive;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        background: var(--clr-black);
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.563em;
+      }
+
+      button {
+        padding: 0.625em 1.375em;
+        font-size: 1.125em;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
+        border: none;
+        /*   outline-color: transparent; */
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      /* Button 1 */
+      .button1 {
+        color: var(--clr-white);
+        background: var(--clr-black);
+        box-shadow: 0 0 5vw 0vw #01e3ef, 0 0 2vw 0.2vw #002fa6,
+          inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #001e6c;
+        text-shadow: 0.1vw 0vw 0.25vw #01e3ef, 0.5vw 0vw 0.25vw #001e6c;
+        animation: neon-color 2s linear infinite;
+      }
+
+      .button1:hover {
+        color: var(--clr-black);
+        background: linear-gradient(135deg, #fcf23b, #c23bfc, #01e3ef, #2ffd14);
+        box-shadow: none;
+        text-shadow: none;
+        transition-delay: 0.1s;
+      }
+
+      /* Button 2 */
+      .button2 {
+        color: var(--clr-white);
+        background: var(--clr-black);
+        box-shadow: 0 0 5vw 0vw #01e3ef, 0 0 2vw 0.2vw #002fa6,
+          inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #001e6c;
+        text-shadow: 0.1vw 0vw 0.25vw #01e3ef, 0.5vw 0vw 0.25vw #001e6c;
+        border-radius: 0.75em;
+        animation: neon-color 1.5s linear infinite;
+      }
+
+      .button2:hover {
+        color: var(--clr-white);
+        background: radial-gradient(
+          ellipse farthest-side at left top,
+          #ecc1ff,
+          #c23bfc,
+          #0144ef
+        );
+        box-shadow: none;
+        text-shadow: none;
+        transition-delay: 0.1s;
+      }
+
+      /* Button 3 */
+      .button3 {
+        color: var(--clr-white);
+        background: var(--clr-black);
+        box-shadow: 0 0 5vw 0vw #01e3ef, 0 0 2vw 0.2vw #002fa6,
+          inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #001e6c;
+        text-shadow: 0.1vw 0vw 0.25vw #01e3ef, 0.5vw 0vw 0.25vw #001e6c;
+        border-radius: 1.5em;
+        animation: neon-color 1.8s linear infinite;
+      }
+
+      .button3:hover {
+        color: var(--clr-white);
+        background: linear-gradient(#129b00, #01b6c0, #a19900, #b812ff);
+        box-shadow: none;
+        text-shadow: none;
+        transition-delay: 0.1s;
+      }
+
+      /* Button 4 */
+      .button4 {
+        color: var(--clr-white);
+        background: var(--clr-black);
+        box-shadow: 0 0 5vw 0vw #01e3ef, 0 0 2vw 0.2vw #002fa6,
+          inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #001e6c;
+        text-shadow: 0.1vw 0vw 0.25vw #01e3ef, 0.5vw 0vw 0.25vw #001e6c;
+        border-radius: 0.625em 6.25em / 7.5em;
+        animation: neon-color 1.5s linear infinite;
+      }
+
+      .button4:hover {
+        color: var(--clr-white);
+        background: radial-gradient(
+          ellipse farthest-side at left top,
+          #00288f 50%,
+          #5886fa
+        );
+        box-shadow: none;
+        text-shadow: none;
+        transition-delay: 0.1s;
+      }
+
+      /* Button 5 */
+      .button5 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        color: var(--clr-white);
+        background: var(--clr-black);
+        box-shadow: 0 0 5vw 0vw #01e3ef, 0 0 2vw 0.2vw #002fa6,
+          inset 0 0 0.5vw 0.2vw #01e3ef, inset 0 0 0.5vw 0.2vw #001e6c;
+        text-shadow: 0.1vw 0vw 0.25vw #01e3ef, 0.5vw 0vw 0.25vw #001e6c;
+        font-size: 0.015em;
+        animation: neon-color 2.5s linear infinite;
+      }
+
+      .button5:hover {
+        color: var(--clr-black);
+        transition-delay: 0.7s;
+        background: radial-gradient(#fcf23b 10%, #c23bfc, #01e3ef, #2ffd14);
+        box-shadow: none;
+        text-shadow: none;
+        transform: rotate(360deg);
+      }
+
+      @keyframes neon-color {
+        from {
+          filter: hue-rotate(0deg);
+        }
+
+        to {
+          filter: hue-rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="buttons">
+      <button class="button1">button color</button>
+      <button class="button2">button color</button>
+      <button class="button3">button color</button>
+      <button class="button4">button color</button>
+      <button class="button5">button color</button>
+    </div>
+  </body>
+</html>
