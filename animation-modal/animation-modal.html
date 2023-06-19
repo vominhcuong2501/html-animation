@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="./animation-modal.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Modal Animations</h1>
+      <ul class="buttons">
+        <li>
+          <button data-modal="modal-skew-from-left">Skew from the left</button>
+        </li>
+        <li>
+          <button data-modal="modal-skew-from-top">Skew from the top</button>
+        </li>
+        <li>
+          <button data-modal="modal-flip-from-left">Flip from the left</button>
+        </li>
+        <li>
+          <button data-modal="modal-flip-from-top">Flip from the top</button>
+        </li>
+        <li><button data-modal="modal-zoom-in">Zoom In</button></li>
+        <li><button data-modal="modal-drop-in">Drop In</button></li>
+      </ul>
+    </div>
+
+    <footer>
+      Handcrafted with ♥ from Austin, Texas by
+      <a href="https://twitter.com/defvayne23">John Hoover</a
+      >.<!-- Spelling checked by James Fleeting. -->
+    </footer>
+
+    <div class="modal-background"></div>
+
+    <div id="modal-skew-from-left" class="modal">
+      <h2>Login</h2>
+      <form action="#">
+        <label>
+          Username:
+          <input type="text" name="username" value="" />
+        </label>
+        <label>
+          Password:
+          <input type="password" name="password" value="" />
+        </label>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+    <div id="modal-skew-from-top" class="modal">
+      <h2>Login</h2>
+      <form action="#">
+        <label>
+          Username:
+          <input type="text" name="username" value="" />
+        </label>
+        <label>
+          Password:
+          <input type="password" name="password" value="" />
+        </label>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+    <div id="modal-flip-from-left" class="modal">
+      <div class="face-3d back-3d"></div>
+      <div class="face-3d front-3d">
+        <h2>Login</h2>
+        <form action="#">
+          <label>
+            Username:
+            <input type="text" name="username" value="" />
+          </label>
+          <label>
+            Password:
+            <input type="password" name="password" value="" />
+          </label>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+
+    <div id="modal-flip-from-top" class="modal">
+      <div class="face-3d back-3d"></div>
+      <div class="face-3d front-3d">
+        <h2>Login</h2>
+        <form action="#">
+          <label>
+            Username:
+            <input type="text" name="username" value="" />
+          </label>
+          <label>
+            Password:
+            <input type="password" name="password" value="" />
+          </label>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+    </div>
+
+    <div id="modal-zoom-in" class="modal">
+      <h2>Login</h2>
+      <form action="#">
+        <label>
+          Username:
+          <input type="text" name="username" value="" />
+        </label>
+        <label>
+          Password:
+          <input type="password" name="password" value="" />
+        </label>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+
+    <div id="modal-drop-in" class="modal">
+      <h2>Login</h2>
+      <form action="#">
+        <label>
+          Username:
+          <input type="text" name="username" value="" />
+        </label>
+        <label>
+          Password:
+          <input type="password" name="password" value="" />
+        </label>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      (function ($) {
+        $(".buttons button").on("click", function () {
+          $(".modal-background").addClass("show").removeClass("hide");
+          $("#" + $(this).data("modal"))
+            .addClass("show")
+            .removeClass("hide");
+        });
+
+        $(".modal-background").on("click", function (e) {
+          e.preventDefault();
+          $(this).removeClass("show").addClass("hide");
+          $(".modal.show").removeClass("show").addClass("hide");
+        });
+
+        $(".modal").on("click", function (e) {
+          e.preventDefault();
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>

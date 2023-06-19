@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      body {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 33;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 48px 64px;
+      }
+
+      .logo {
+        width: 100px;
+      }
+
+      .logo-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 48px 64px;
+        z-index: 11;
+      }
+
+      .footer-item {
+        font-size: 14px;
+        color: rgba(#000000, 0.6);
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+      }
+
+      .user-profile-icon,
+      .cart-icon {
+        width: 25px;
+        height: 25px;
+        object-fit: cover;
+      }
+
+      .cart {
+        margin-left: 20px;
+      }
+
+      .animate-item {
+        transition: all 0.3s;
+      }
+
+      .background-image {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .background-image:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 0.6);
+        height: 100vh;
+        backdrop-filter: blur(50px);
+        z-index: 11;
+      }
+
+      .background-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: all 0.3s;
+      }
+
+      .hero-wrapper {
+        width: 100%;
+        height: 100vh;
+        display: block;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .swiper-slide-active {
+        justify-content: center;
+      }
+
+      .swiper-slide-active .product {
+        background-color: #ffffff;
+        opacity: 1;
+      }
+
+      .swiper-slide-next .product {
+        margin-left: -15%;
+        filter: blur(7px);
+      }
+
+      .swiper-slide-next .product__content {
+        opacity: 0;
+        transform: scale(1.2);
+        transition: all 0.3s;
+      }
+
+      .swiper-slide-next .product__banner {
+        box-shadow: none;
+      }
+
+      .swiper-slide-prev .product {
+        opacity: 1;
+        filter: blur(10px);
+      }
+
+      .swiper-slide {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        perspective: 1000px;
+        display: flex;
+        align-items: center;
+      }
+
+      .product {
+        position: relative;
+        width: 500px;
+        height: 600px;
+        border-radius: 50px;
+        transform-style: preserve-3d;
+        transition: transform 0.2s linear;
+      }
+
+      .product__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateZ(80px);
+      }
+
+      .product__banner {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+      }
+
+      .product__banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .product__organic-logo {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+      }
+
+      .product__title {
+        position: absolute;
+        left: -5px;
+        top: 45px;
+        font-size: 2em;
+        font-weight: 700;
+        color: #242323;
+        text-transform: uppercase;
+      }
+
+      .product__description {
+        position: absolute;
+        left: -5px;
+        bottom: 45px;
+        font-size: 14px;
+        font-weight: 300;
+        opacity: 1;
+        width: 200px;
+      }
+
+      .product__price {
+        position: absolute;
+        bottom: 45px;
+        right: 5px;
+        font-weight: 700;
+      }
+
+      @media screen and (max-width: 992px) {
+        .swiper-slide-next .product {
+          margin-left: unset;
+          opacity: 0;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .footer,
+        .header {
+          padding: 12px 20px;
+        }
+        .footer-item {
+          font-size: 12px;
+        }
+        .swiper-slide {
+          perspective: none;
+          width: auto;
+          padding: 20px;
+        }
+        .swiper-wrapper {
+          width: 100%;
+        }
+        .product {
+          width: 100%;
+          height: auto;
+          border-radius: 20px;
+        }
+        .product__content {
+          position: relative;
+          transform: translateZ(0px);
+          height: 100px;
+          width: calc(100% - 40px);
+          margin-left: 20px;
+        }
+        .product__banner {
+          padding: 12px;
+          border-radius: 20px;
+          box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.08);
+          height: 320px;
+        }
+        .product__title {
+          left: 0;
+          top: -16px;
+          font-size: 1.4em;
+        }
+        .product__description {
+          left: 0;
+          bottom: 15px;
+          font-size: 12px;
+          width: 180px;
+        }
+        .product__organic-logo {
+          right: 0;
+          top: -30px;
+          width: 60px;
+          height: 60px;
+          object-fit: contain;
+        }
+        .product__price {
+          bottom: 15px;
+          right: 0px;
+        }
+        .background-image img {
+          object-fit: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo animate-item" data-value="1">
+        <img
+          src="https://i.ibb.co/NZgLwdK/Frame-1-1.png"
+          alt="Logo"
+          class="logo-image"
+        />
+      </div>
+      <div class="user">
+        <div class="user-profile animate-item" data-value="2">
+          <img
+            src="https://i.ibb.co/G5FRGM8/avatar.png"
+            alt=""
+            class="user-profile-icon"
+          />
+        </div>
+        <div class="cart animate-item" data-value="2">
+          <img
+            src="https://i.ibb.co/tZygY4B/shopping-cart.png"
+            alt=""
+            class="cart-icon"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="hero-wrapper">
+        <div class="background-image">
+          <img id="background-image" src="" alt="" />
+        </div>
+        <div class="hero-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/SJPQcNZ/U3f818dc61b164bd3996575580efd2b4b6.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Orange</p>
+                  <p class="product__description">
+                    Full of soluble fiber, tangy, juicy oranges are helpful in
+                    lowering cholesterol
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">1,43 € / Kg</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/P59xzQ6/Ripe-pomegranate-fruit-and-one-cut-in-half-with-leaf-isolated-on-white-background-Clipping-Path-Full.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Pomegranate</p>
+                  <p class="product__description">
+                    Pomegranate is a round fruit with a thick, reddish maroon
+                    skin and hundreds of edible seeds within.
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">1,59 € / 500 Gr</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/tYSXjj5/green-apples-1518268185-3638493.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Apple Green</p>
+                  <p class="product__description">
+                    The compound quercitin, a major component in green apple
+                    peels, helps to lower sugar levels and manage type-2
+                    diabetes mellitus
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">1,19 € / Kg</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/0crTrK4/42-E9as7-Na-Ta-Ai4-A6-Jcu-Fw-G.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Banana Golden</p>
+                  <p class="product__description">
+                    Surprise your loved ones with a luxurious cake made with
+                    soft and sweet bananas
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">1,89 € / Kg</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/Pwq5KGb/Plum-Imported.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Plums Imported</p>
+                  <p class="product__description">
+                    The plum is a succulent fruit. Eaten globally, this red
+                    fruit can be consumed in multiple ways.
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">1,29 € / 300 Gr</span>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product">
+                <div class="product__banner">
+                  <img
+                    class="product-image"
+                    src="https://i.ibb.co/hCVJs9Q/muskmelon-1-500x500.png"
+                    alt=""
+                  />
+                </div>
+                <div class="product__content">
+                  <p class="product__title">Muskmelon</p>
+                  <p class="product__description">
+                    A delicious, refreshing juice made from musk melon is a
+                    summer favorite!
+                  </p>
+                  <img
+                    src="https://cms.agr.wa.gov/WSDAKentico/Documents/FSCS/Organic/seals/WSDA-Organic-BW.png"
+                    alt=""
+                    class="product__organic-logo"
+                  />
+                  <span class="product__price">2,19 € / Kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p class="footer-item animate-item" data-value="2">
+        Copyright 2021 &copy; Green Grocery
+      </p>
+
+      <p class="footer-item animate-item" data-value="3">
+        Made in Kiev with &#10084;
+      </p>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script>
+      document.addEventListener("mouseout", disableCardAnimate);
+      document.addEventListener("DOMContentLoaded", animateStatus);
+
+      const swiper = new Swiper(".hero-slider", {
+        loop: true,
+        slidesPerView: 1,
+        mousewheel: true,
+        centeredSlides: false,
+        observer: true,
+        observeParents: true,
+      });
+
+      swiper.on("transitionEnd", function () {
+        changeActiveBg();
+      });
+
+      function changeActiveBg() {
+        const activeElement = document.querySelector(
+          ".swiper-slide-active .product-image"
+        );
+        const backgroundImage = document.querySelector("#background-image");
+        backgroundImage.animate(
+          [
+            {
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+            },
+          ],
+          {
+            duration: 300,
+          }
+        );
+        backgroundImage.src = activeElement.src;
+      }
+
+      function cardAnimate(e) {
+        this.querySelectorAll(".swiper-slide-active .product").forEach(
+          function (boxMove) {
+            const x = -(window.innerWidth / 3 - e.pageX) / 90;
+            const y = (window.innerHeight / 3 - e.pageY) / 30;
+            boxMove.style.transform =
+              "rotateY(" + x + "deg) rotateX(" + y + "deg)";
+          }
+        );
+        this.querySelectorAll(".animate-item").forEach(function (itemMove) {
+          const movingValue = itemMove.getAttribute("data-value");
+          const x = (window.innerWidth - e.pageX * movingValue) / 230;
+          const y = (window.innerHeight - e.pageY * movingValue) / 230;
+          itemMove.style.transform = "translate(" + y + "px," + x + "px)";
+        });
+      }
+
+      function disableCardAnimate(d) {
+        this.querySelectorAll(".swiper-slide-active .product").forEach(
+          function (boxMove) {
+            boxMove.style.transform = "rotateY(0deg) rotateX(0deg)";
+          }
+        );
+        this.querySelectorAll(".header .animate-item").forEach(function (
+          itemMove
+        ) {
+          itemMove.style.transform = "translate(0px, 0px)";
+        });
+      }
+
+      function animateStatus() {
+        if (window.innerWidth > 576) {
+          document.addEventListener("mousemove", cardAnimate);
+        }
+      }
+
+      window.onload = changeActiveBg();
+    </script>
+  </body>
+</html>
