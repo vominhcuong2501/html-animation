@@ -1,0 +1,1092 @@
+/* Global  */
+#meliwa-advertisement h1,
+#meliwa-advertisement h2,
+#meliwa-advertisement h3,
+#meliwa-advertisement h4,
+#meliwa-advertisement h5,
+#meliwa-advertisement h6,
+#meliwa-advertisement p,
+body {
+  margin: 0;
+}
+#meliwa-advertisement {
+  padding: 84px 0 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+  overflow: hidden;
+}
+#meliwa-advertisement .img-mobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+#meliwa-advertisement .img-desktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#meliwa-advertisement .title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: #252525;
+}
+#meliwa-advertisement .div-btn-support {
+  margin: 20px 0 10px;
+  -webkit-animation: 1.3s animateButton linear infinite;
+  animation: 1.3s animateButton linear infinite;
+}
+#meliwa-advertisement .btn-support {
+  background: linear-gradient(92.86deg, #ff7e00 8.58%, #ff6801 168.02%);
+  border-radius: 10px;
+  padding: 11.5px 28px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 150%;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+#meliwa-advertisement .title-position {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 60px;
+  max-width: 960px;
+  z-index: 99;
+}
+
+/* banner  */
+#meliwa-advertisement .banner {
+  position: relative;
+  margin: 0 auto;
+  overflow-x: hidden;
+  width: 100%;
+  text-align: center;
+}
+#meliwa-advertisement .banner .img-desktop {
+  width: 100%;
+  object-fit: cover;
+}
+#meliwa-advertisement .banner .banner-content {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 100%;
+}
+#meliwa-advertisement .banner .banner-content h1 {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 150%;
+  text-align: center;
+  color: #252525;
+  text-transform: uppercase;
+}
+#meliwa-advertisement .banner .banner-content .btn-phone {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 150%;
+  color: #333333;
+  padding: 6px 12px 6px 6px;
+  background: #c1e5d8;
+  text-decoration: none;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+}
+#meliwa-advertisement .banner .banner-content .btn-phone img {
+  margin-right: 8px;
+  animation-name: ringPhone;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* table  */
+#meliwa-advertisement .table-guide {
+  background: #f3f3f3;
+  padding: 60px 16px;
+}
+#meliwa-advertisement .table-content {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+#meliwa-advertisement .table-img {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+#meliwa-advertisement .table-img p {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #252525;
+  margin-top: 16px;
+}
+#meliwa-advertisement .table-text {
+  margin-top: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#meliwa-advertisement .table-text > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #dddddd;
+}
+#meliwa-advertisement .table-text > div:last-child {
+  border-bottom: none;
+}
+#meliwa-advertisement .table-text .technology div {
+  min-height: 87px;
+  text-align: left;
+}
+#meliwa-advertisement .table-text > div div {
+  border-left: 1px solid #dddddd;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #5e5e5e;
+}
+#meliwa-advertisement .table-text > div div:first-child {
+  border-left: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #252525;
+  background: #c1e5d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#meliwa-advertisement .table-text > div div:first-child::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: #a3c5b8;
+  left: 0;
+  bottom: -1px;
+}
+#meliwa-advertisement .table-text .logo div {
+  min-height: 102px;
+}
+#meliwa-advertisement .table-text > div div:nth-child(2) {
+  border-left: none;
+}
+#meliwa-advertisement .table-text .div-merge {
+  grid-column: 2 / span 4;
+}
+#meliwa-advertisement .table-text .div-merge p {
+  margin-top: 10px;
+}
+#meliwa-advertisement .table-text .div-merge img {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+/* review  */
+/* warranty */
+#meliwa-advertisement .review {
+  max-width: 1320px;
+  margin: 60px auto 0;
+}
+
+/* warranty */
+#meliwa-advertisement .warranty {
+  max-width: 1300px;
+  margin: 60px auto 0;
+}
+#meliwa-advertisement .title span {
+  color: #ff6700;
+}
+#meliwa-advertisement .warranty .warranty-text {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  margin-top: 60px;
+}
+#meliwa-advertisement .warranty .warranty-text .warranty-item {
+  position: relative;
+  text-align: center;
+  height: 240px;
+  width: 240px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07), 0px 1px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#meliwa-advertisement .warranty .warranty-text .warranty-item div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+#meliwa-advertisement .warranty .warranty-text p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #333333;
+  padding: 0 35px;
+}
+
+/* information  */
+#meliwa-advertisement .information {
+  max-width: 1300px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-between;
+}
+#meliwa-advertisement .information .title {
+  text-align: left;
+}
+#meliwa-advertisement .information .promotion {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.07), 0px 1px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 22px;
+  margin: 40px 20px 0 0;
+  min-width: 620px;
+}
+#meliwa-advertisement .information .promotion div {
+  display: flex;
+  align-items: center;
+}
+#meliwa-advertisement .information .promotion div p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #333333;
+}
+#meliwa-advertisement .information .promotion div img {
+  margin-right: 16px;
+}
+#meliwa-advertisement .information .count-down {
+  margin-top: 40px;
+}
+#meliwa-advertisement .information .count-down h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #333333;
+}
+#meliwa-advertisement .information .count-down-time {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+#meliwa-advertisement .information .count-down-time .text-number {
+  background: #ff6700;
+  padding: 7px 0;
+  border-radius: 10px;
+  margin: 16px 0 10px 0;
+  width: 74px;
+}
+#meliwa-advertisement .information .count-down-time span {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #464646;
+  text-transform: uppercase;
+}
+#meliwa-advertisement .information .count-down-time .text-number p {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 46px;
+  color: #ffffff;
+  margin: 0;
+}
+#meliwa-advertisement .information .count-down-time .text-dot {
+  margin: 13px 16px 0;
+  font-size: 40px;
+  color: #ff6700;
+}
+#meliwa-advertisement .information .information-form {
+  padding: 24px 30px;
+  background: #c1e5d8;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07), 0px 1px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  min-width: 600px;
+}
+#meliwa-advertisement .information .information-form h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #242424;
+}
+#meliwa-advertisement .information .information-form div label,
+#meliwa-advertisement .information .information-form div p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #242424;
+}
+#meliwa-advertisement .information .information-form div label {
+  display: block;
+  min-height: 74px;
+  max-height: 100px;
+}
+#meliwa-advertisement .information .information-form form > p,
+#meliwa-advertisement .list-product > p {
+  margin-top: 16px;
+}
+#meliwa-advertisement .information .information-form span {
+  color: #ff2727;
+}
+#meliwa-advertisement .information .information-form div input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin-top: 8px;
+  color: #242424;
+}
+#meliwa-advertisement .information .information-form .phone-format {
+  padding-left: 50px;
+  margin: 5px 0 !important;
+}
+#meliwa-advertisement input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #b8b8b8;
+}
+#meliwa-advertisement .list-product div p,
+#meliwa-advertisement .list-product div p label {
+  margin: 0 !important;
+}
+#meliwa-advertisement .list-product div {
+  display: flex;
+  justify-content: flex-start;
+}
+#meliwa-advertisement .list-product .img-btn {
+  margin-right: 12px;
+}
+#meliwa-advertisement .list-product .img-btn input {
+  display: none;
+}
+#meliwa-advertisement .list-product .img-btn img {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+#meliwa-advertisement .selected {
+  border: 1px solid #ff6700 !important;
+}
+
+#meliwa-advertisement .information .information-form .btn-submit {
+  padding: 10px 20px;
+  background: linear-gradient(92.86deg, #ff7e00 8.58%, #ff6801 168.02%);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  margin: 20px auto 0;
+  display: block;
+  width: auto;
+}
+#meliwa-advertisement .information .information-form .text-des {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #5e5e5e;
+}
+#meliwa-advertisement .information .information-form .text-error {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ff2727;
+  margin-top: 6px;
+  display: none;
+}
+#meliwa-advertisement .information .isError .text-error {
+  display: block;
+}
+#meliwa-advertisement #product_names {
+  display: none !important;
+}
+#meliwa-advertisement span[data-name="product"] {
+  display: none;
+}
+#meliwa-advertisement .wpcf7-response-output {
+  display: none;
+}
+
+/* utilities */
+#meliwa-advertisement .utilities {
+  max-width: 1300px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+#meliwa-advertisement .utilities img {
+  border-radius: 10px;
+}
+
+#meliwa-advertisement .utilities .top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#meliwa-advertisement .utilities .center,
+#meliwa-advertisement .utilities .right {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+#meliwa-advertisement .utilities .bottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+#meliwa-advertisement .utilities .text-img {
+  position: relative;
+}
+#meliwa-advertisement .utilities .text-img h3 {
+  color: #252525;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+}
+
+/* popup  */
+#popup-landing-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.4s ease 0s;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  opacity: 1;
+  display: none;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+#popup-landing-page .content-success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 10px;
+  min-width: 500px;
+  text-align: center;
+}
+#popup-landing-page .content-success h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #171c1c;
+  margin: 20px 0 0 0;
+}
+#popup-landing-page .content-success p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #86868b;
+  margin: 12px 0 20px 0;
+}
+#popup-landing-page .content-success button {
+  padding: 12px 37px;
+  background: linear-gradient(92.86deg, #ff7e00 8.58%, #ff6801 168.02%);
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s;
+  text-transform: capitalize;
+}
+
+/* video  */
+#meliwa-advertisement .video-des {
+  background: linear-gradient(180deg, #c9ced1 0%, #c4cbce 100%);
+  text-align: center;
+  position: relative;
+}
+#meliwa-advertisement .video-des video {
+  margin-bottom: -6px;
+  width: 100%;
+  height: 100%;
+}
+#meliwa-advertisement .video-des .video-mobile {
+  display: none;
+}
+
+#meliwa-advertisement .video-des .title-position {
+  top: 21%;
+}
+#meliwa-advertisement .video-des .div-btn-support {
+  animation: unset;
+}
+
+/* filter  */
+#meliwa-advertisement .purifier-filter {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+/* ionizer  */
+#meliwa-advertisement .ionizer {
+  position: relative;
+  text-align: center;
+}
+#meliwa-advertisement .ionizer .title-position {
+  max-width: 100%;
+  width: 100%;
+}
+#meliwa-advertisement .ionizer .title-position .title {
+  font-size: 32px;
+}
+
+/* ionizer  */
+#meliwa-advertisement .pollution {
+  position: relative;
+  max-width: 1300px;
+  margin: 60px auto;
+}
+#meliwa-advertisement .pollution .title-position {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* tech-uvc  */
+#meliwa-advertisement .tech-uvc .title {
+  color: #ffffff;
+}
+
+/* smart-home  */
+#meliwa-advertisement .smart-home {
+  position: relative;
+  text-align: center;
+}
+#meliwa-advertisement .smart-home .title-position {
+  max-width: 100%;
+  width: 100%;
+}
+#meliwa-advertisement .smart-home .div-btn-support {
+  margin-top: 150px;
+}
+
+/* popup info  */
+#popupInfo {
+  display: none;
+  position: fixed;
+  top: 12.5%;
+  left: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  border-radius: 10px;
+  transform: translateX(-100%);
+  -webkit-animation: animatePopup 0.5s forwards alternate ease-in;
+  animation: animatePopup 0.5s forwards alternate ease-in;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+#popupInfo .notification {
+  display: flex;
+  align-items: center;
+}
+#popupInfo .icon-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 149, 247, 1);
+  margin: 0 15px 0 10px;
+  animation: animateDot 1s infinite;
+}
+#popupInfo .notification p {
+  color: #252525;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  margin: 0;
+}
+@media only screen and (max-width: 1650px) {
+  #meliwa-advertisement .purifier-filter {
+    position: relative;
+    padding-top: 100px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #meliwa-advertisement .warranty,
+  #meliwa-advertisement .information {
+    padding: 0 16px;
+  }
+  #meliwa-advertisement .utilities {
+    padding: 0 10px;
+  }
+  #meliwa-advertisement .purifier-filter .title-position {
+    width: 100%;
+  }
+  #meliwa-advertisement .information .information-form {
+    min-width: auto;
+  }
+  #meliwa-advertisement .information .promotion {
+    min-width: unset;
+  }
+  /* ionizer  */
+  #meliwa-advertisement .pollution {
+    margin: 0;
+  }
+  /* smart-home  */
+  #meliwa-advertisement .smart-home .title-position {
+    top: 40px;
+  }
+  #meliwa-advertisement .smart-home .div-btn-support {
+    margin-top: 100px;
+  }
+  /* .utilities */
+  #meliwa-advertisement .utilities img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 1240px) {
+  /* warranty  */
+  #meliwa-advertisement .warranty .warranty-text .warranty-item {
+    height: 220px;
+    width: 220px;
+  }
+  #meliwa-advertisement .warranty .warranty-text {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 1180px) {
+  #meliwa-advertisement .table-text .technology div {
+    min-height: 109px;
+  }
+  /* .utilities */
+  #meliwa-advertisement .utilities .text-img h3 {
+    font-size: 16px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    line-height: 22px;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  #meliwa-advertisement .table-text > div:first-child div {
+    min-height: 65px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  /* global  */
+  #meliwa-advertisement .title,
+  #meliwa-advertisement .ionizer .title-position .title {
+    font-size: 20px;
+  }
+  #meliwa-advertisement {
+    padding: 60px 0 0 0;
+  }
+  /* warranty  */
+  #meliwa-advertisement .warranty,
+  #meliwa-advertisement .information {
+    margin: 50px auto 0;
+  }
+  #meliwa-advertisement .warranty .warranty-text {
+    gap: 20px 16px;
+    margin-top: 20px;
+  }
+  #meliwa-advertisement .warranty .warranty-text .warranty-item {
+    height: 163.5px;
+    width: 163.5px;
+  }
+  #meliwa-advertisement .warranty .warranty-text p {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+  #meliwa-advertisement .warranty .warranty-text img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* information  */
+
+  #meliwa-advertisement .information .promotion {
+    padding: 16px;
+    margin: 32px 20px 0 0;
+    gap: 12px;
+  }
+  #meliwa-advertisement .information .promotion div img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  #meliwa-advertisement .information .promotion div p {
+    font-size: 14px;
+  }
+  #meliwa-advertisement .information .count-down {
+    margin-top: 32px;
+  }
+  #meliwa-advertisement .information .count-down h3 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  #meliwa-advertisement .information .count-down-time .text-number {
+    padding: 2px 0;
+    width: 62px;
+    margin: 12px 0 6px 0;
+  }
+  #meliwa-advertisement .information .count-down-time span {
+    font-size: 12px;
+  }
+  #meliwa-advertisement .information .count-down-time .text-number p {
+    font-size: 32px;
+  }
+  #meliwa-advertisement .information .count-down-time .text-dot {
+    margin: 8px 5px 0;
+    font-size: 36px;
+  }
+  #meliwa-advertisement .information .information-form {
+    padding: 20px 16px;
+  }
+  #meliwa-advertisement .information .information-form h3 {
+    font-size: 20px;
+    padding: 0 25px;
+  }
+  #meliwa-advertisement .information .information-form div label,
+  #meliwa-advertisement .information .information-form div p {
+    font-size: 14px;
+  }
+  #meliwa-advertisement .information .information-form div input {
+    font-size: 14px;
+  }
+  #meliwa-advertisement input::placeholder {
+    font-size: 14px;
+  }
+  #meliwa-advertisement .list-product div {
+    justify-content: space-between;
+  }
+  #meliwa-advertisement .list-product .img-btn {
+    margin-right: 0;
+  }
+  #meliwa-advertisement .img-btn img {
+    width: 97px !important;
+    height: 136px !important;
+  }
+
+  #meliwa-advertisement .information .information-form .btn-submit {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+  #meliwa-advertisement .information .information-form .text-des {
+    font-size: 14px;
+  }
+  #meliwa-advertisement .information .information-form .text-error {
+    font-size: 12px;
+  }
+
+  /* utilities */
+  #meliwa-advertisement .utilities {
+    margin: 40px auto;
+    gap: 3px 5px;
+  }
+  #meliwa-advertisement .utilities .top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 5px;
+  }
+  #meliwa-advertisement .utilities .center {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  #meliwa-advertisement .utilities .left {
+    grid-column: 2 / span 1;
+  }
+
+  #meliwa-advertisement .utilities .center,
+  #meliwa-advertisement .utilities .right {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3px 5px;
+  }
+  #meliwa-advertisement .utilities .right {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / span 2;
+  }
+  #meliwa-advertisement .utilities .bottom {
+    gap: 3px 5px;
+  }
+
+  /* smart-home  */
+  #meliwa-advertisement .smart-home .div-btn-support {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* button support  */
+  #meliwa-advertisement .btn-support {
+    padding: 9px 22px;
+    font-size: 18px;
+  }
+
+  /* banner  */
+  #meliwa-advertisement .banner .banner-content h1 {
+    font-size: 24px;
+  }
+  #meliwa-advertisement .banner .banner-content .btn-phone {
+    font-size: 16px;
+  }
+
+  /* warranty  */
+  #meliwa-advertisement .warranty .warranty-text {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+    margin-top: 24px;
+  }
+
+  /* information  */
+  #meliwa-advertisement .information {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+  }
+  #meliwa-advertisement .information .promotion {
+    margin: 32px 0 0 0;
+  }
+  #meliwa-advertisement .information .information-form {
+    margin-top: 32px;
+  }
+
+  /* popup  */
+  #popup-landing-page .content-success {
+    padding: 30px 24px;
+    min-width: 343px;
+  }
+  #popup-landing-page .content-success h2 {
+    font-size: 17px;
+  }
+  #popup-landing-page .content-success p {
+    font-size: 15px;
+  }
+  #popup-landing-page .content-success button {
+    padding: 6.5px 21.5px;
+  }
+
+  /* table */
+  #meliwa-advertisement .table-guide {
+    padding: 40px 16px;
+  }
+  #meliwa-advertisement .table-img {
+    margin-top: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #meliwa-advertisement .table-img div:first-child {
+    grid-column: 1 / span 3;
+  }
+  #meliwa-advertisement .table-img p {
+    font-size: 16px;
+  }
+  #meliwa-advertisement .table-text > div div {
+    font-size: 13px;
+  }
+  #meliwa-advertisement .table-text > div div:first-child {
+    font-size: 16px;
+  }
+  #meliwa-advertisement .table-text > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #meliwa-advertisement .table-text > div div:first-child {
+    grid-column: 1 / span 3;
+  }
+  #meliwa-advertisement .table-text > div:first-child div,
+  #meliwa-advertisement .table-text .technology div:first-child,
+  #meliwa-advertisement .table-text .logo div {
+    min-height: auto;
+  }
+  #meliwa-advertisement .table-text .technology div {
+    min-height: 130px;
+  }
+  #meliwa-advertisement .table-text .div-merge {
+    grid-column: 1 / span 3;
+  }
+  #meliwa-advertisement .table-text .text {
+    padding: 10px 20px;
+  }
+
+  /* video  */
+  #meliwa-advertisement .title-position {
+    top: 40px;
+    width: 90%;
+  }
+  #popupInfo {
+    top: 9%;
+    left: 0;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  #popupInfo .icon-dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 10px 0 5px;
+  }
+  #popupInfo .notification p {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  /* img desktop - mobile  */
+  #meliwa-advertisement .img-desktop,
+  #meliwa-advertisement .video-des .video-desktop {
+    display: none;
+  }
+  #meliwa-advertisement .img-mobile,
+  #meliwa-advertisement .video-des .video-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+  /* banner  */
+  #meliwa-advertisement .banner .banner-content .btn-phone {
+    font-size: 16px;
+    padding: 6px 12px 6px 6px;
+    margin-top: 10px;
+  }
+  #meliwa-advertisement .banner .banner-content .btn-phone img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* video  */
+  #meliwa-advertisement .video-des video {
+    width: 100%;
+    height: 100%;
+  }
+  /* smart-home  */
+  #meliwa-advertisement .smart-home .title-position {
+    width: 80%;
+  }
+  #meliwa-advertisement .smart-home .div-btn-support {
+    margin-top: 200px;
+  }
+  /* .utilities */
+  #meliwa-advertisement .utilities .utilities-img-mobile {
+    height: 100px;
+  }
+  #meliwa-advertisement .utilities .left img {
+    height: 255px;
+  }
+  #meliwa-advertisement .utilities .left .text-img h3 {
+    padding-right: 20px;
+  }
+  #meliwa-advertisement .utilities .center .img-150 {
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #meliwa-advertisement .selectProduct > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #meliwa-advertisement .selectProduct .img-btn > img {
+    margin-right: 0;
+    width: 97px;
+    height: 136px;
+  }
+
+  /* ionizer  */
+  #meliwa-advertisement .ionizer .title-position {
+    width: 85%;
+  }
+  #meliwa-advertisement .pollution .title-position {
+    width: 90%;
+  }
+}
+@keyframes animateButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animatePopup {
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes animateDot {
+  from {
+    box-shadow: 0px 0px 0px rgba(0, 149, 247, 0.8);
+  }
+  to {
+    box-shadow: 0px 0px 15px rgba(0, 149, 247, 0.8);
+  }
+}
+@keyframes ringPhone {
+  from {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  20%,
+  32%,
+  44%,
+  56%,
+  68% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  23%,
+  35%,
+  47%,
+  59%,
+  71% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+  26%,
+  38%,
+  50%,
+  62%,
+  74% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  29%,
+  41%,
+  53%,
+  65%,
+  77% {
+    transform: rotate3d(0, 0, 1, -15deg);
+  }
+  80% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
