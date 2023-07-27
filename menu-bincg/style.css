@@ -72,12 +72,12 @@ hr {
 }
 
 .header .header-bottom .nav-menu .menu .menu-item .menu-item-link {
-  line-height: 50px;
   padding: 15px;
   font-size: 16px;
   font-weight: 600;
   position: relative;
   color: #000;
+  cursor: pointer;
 }
 .header .header-bottom .nav-menu .menu .menu-item .list-menu-drop::after {
   content: "";
@@ -293,6 +293,7 @@ hr {
   position: relative;
   cursor: pointer;
   font-weight: 600;
+  color: #000;
 }
 
 .accordion .accordion-drop::after {
@@ -354,6 +355,178 @@ hr {
   color: #0e3494;
 }
 
+.btn-language-mobile {
+  position: relative;
+}
+.btn-language-mobile .accordion-item-header {
+  font-weight: 400;
+}
+.btn-language-mobile::before {
+  position: absolute;
+  content: "";
+  left: -15px;
+  right: -15px;
+  bottom: 0;
+  width: 500%;
+  height: 1px;
+  background: #dddddd;
+}
+
+/* Menu right desktop  */
+.header-top__right {
+  display: flex;
+}
+.header-top__right__search {
+  position: relative;
+  margin-right: 20px;
+}
+
+.search-desktop {
+  padding: 10px 20px 10px 10px;
+  border-radius: 6px;
+  border: 1px solid #acabab;
+  min-width: 215px;
+}
+
+.header-top__right__search img {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* menu language desktop  */
+.content-language {
+  position: relative;
+}
+
+div.dropdown-language {
+  position: relative;
+  width: 130px;
+}
+div.dropdown-language:after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  width: 10px;
+  height: 6px;
+  background-image: url(https://www.bincg.com/frontend2/images/header/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  top: 50%;
+  right: 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  transform: translateY(-50%);
+}
+
+div.dropdown-language:hover:after {
+  transform: rotate(180deg);
+  top: 45%;
+}
+div.dropdown-language > div.caption {
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 7px 15px 7px 45px;
+  font-size: 16px;
+  line-height: 140%;
+  color: #464646;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+}
+
+div.dropdown-language > div.list-language {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+  box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75),
+    opacity 0.1s linear;
+  transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  top: 40px;
+  z-index: -1;
+  visibility: hidden;
+}
+
+div.dropdown-language.open > div.list-language {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+}
+
+div.dropdown-language > div.list-language > div.item-language {
+  padding: 10.5px 15px 10.5px 45px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.3px;
+  color: #464646;
+  display: flex;
+  align-items: center;
+}
+
+div.dropdown-language > div.list-language > div.item-language.selected {
+  background: rgba(36, 60, 187, 0.2);
+  pointer-events: none;
+}
+
+div.dropdown-language > div.list-language > div.item-language:hover {
+  background: #f0f0f0;
+}
+
+div.dropdown-language > div.caption img,
+div.dropdown-language > div.list-language > div.item-language img {
+  position: absolute;
+  left: 15px;
+}
+
+/* menu language mobile  */
+.hamburger-menu div.dropdown-language {
+  width: 110px;
+}
+.hamburger-menu div.dropdown-language > div.caption {
+  padding: 7px 15px 7px 30px;
+}
+.hamburger-menu div.dropdown-language > div.caption img {
+  left: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header-top__right__language .dropdown-content {
+  animation: slideIn 0.3s ease-out;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #c2c9d2;
+}
+
 /* Responsive Header */
 @media screen and (max-width: 991px) {
   .header .header-top {
@@ -366,6 +539,10 @@ hr {
   }
 
   .header .header-bottom {
+    display: none;
+  }
+  .header .header-top__right__search,
+  .header .header-top__right__language {
     display: none;
   }
 }

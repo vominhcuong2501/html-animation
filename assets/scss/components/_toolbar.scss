@@ -1,0 +1,70 @@
+.toolbar-area {
+  background-color: $primary-color;
+  .toolbar-area-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    .toolbar-contact {
+      margin: 0;
+      display: flex;
+      &-email {
+        display: flex;
+        align-items: center;
+        i {
+          position: relative;
+          top: 5px;
+          font-size: 23px;
+          color: #ffffff;
+          margin-right: 8px;
+        }
+        &-link {
+          color: #ffffff;
+          font-size: 13px;
+          font-weight: 500;
+          padding-right: 20px;
+          margin-right: 20px;
+          border-right: 1px solid #ffffff;
+        }
+      }
+      &-phone {
+        display: flex;
+        align-items: center;
+        i {
+          font-size: 18px;
+          color: #ffffff;
+          margin-right: 8px;
+        }
+        &-link {
+          color: #ffffff;
+          font-size: 13px;
+          font-weight: 500;
+        }
+      }
+    }
+    .toolbar-sl-share {
+      display: flex;
+      align-items: center;
+      i {
+        position: relative;
+        top: 5px;
+        font-size: 18px;
+        color: #ffffff;
+        margin-right: 8px;
+      }
+      .opening {
+        font-size: 13px;
+        color: #ffffff;
+        margin-bottom: 0;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* Responsive toolbar */
+@include breakpoint-down(tablet) {
+  .toolbar-area {
+    display: none;
+  }
+}

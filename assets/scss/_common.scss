@@ -1,0 +1,41 @@
+.btn-primary {
+  background-color: $primary-color;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 300px;
+  height: 200px;
+  background-color: #333;
+  border-color: transparent;
+  border-radius: 50%;
+  transform: translate(-40px, -80px) scale(0.1);
+  opacity: 0;
+  z-index: -1;
+  transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
+}
+
+.btn-primary:hover::after {
+  opacity: 0.3;
+  transform-origin: 100px 100px;
+  transform: scale(1) translate(-10px, -70px);
+}
