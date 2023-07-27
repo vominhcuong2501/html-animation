@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .content-language {
+        position: relative;
+      }
+
+      div.dropdown-language {
+        position: relative;
+        width: 130px;
+      }
+      div.dropdown-language:after {
+        content: "";
+        position: absolute;
+        margin: 0;
+        width: 10px;
+        height: 6px;
+        background-image: url(https://www.bincg.com/frontend2/images/header/icon-arrow-down.svg);
+        background-repeat: no-repeat;
+        top: 50%;
+        right: 10px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        transform: translateY(-50%);
+      }
+
+      div.dropdown-language:hover:after {
+        transform: rotate(180deg);
+        top: 45%;
+      }
+      div.dropdown-language > div.caption {
+        background: #f8f9fb;
+        border-radius: 12px;
+        cursor: pointer;
+        padding: 7px 15px 7px 50px;
+        font-size: 16px;
+        line-height: 140%;
+        color: #464646;
+        letter-spacing: 0.3px;
+        display: flex;
+        align-items: center;
+      }
+
+      div.dropdown-language > div.list-language {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 12px;
+        -webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+        box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+        opacity: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75),
+          opacity 0.1s linear;
+        transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75),
+          opacity 0.1s linear;
+        -webkit-transform: scale(0.85);
+        transform: scale(0.85);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        top: 50px;
+        z-index: -1;
+        visibility: hidden;
+      }
+
+      div.dropdown-language.open > div.list-language {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+        z-index: 1;
+        visibility: visible;
+      }
+
+      div.dropdown-language > div.list-language > div.item-language {
+        padding: 10.5px 15px 10.5px 50px;
+        cursor: pointer;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.3px;
+        color: #464646;
+      }
+
+      div.dropdown-language > div.list-language > div.item-language.selected {
+        background: rgba(36, 60, 187, 0.4);
+        pointer-events: none;
+      }
+
+      div.dropdown-language > div.list-language > div.item-language:hover {
+        background: #f8f9fb;
+      }
+
+      div.dropdown-language > div.caption img,
+      div.dropdown-language > div.list-language > div.item-language img {
+        position: absolute;
+        margin-top: 2.5px;
+        left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-language">
+      <div class="dropdown-language">
+        <div class="caption">
+          <img
+            src="https://dhjyr2o4dvaja.cloudfront.net/frontend2/images/icon-global.svg"
+            width="20"
+            height="20"
+            loading="lazy"
+            alt="Global"
+            title="Global"
+          />
+          Global
+        </div>
+        <div class="list-language">
+          <div class="item-language selected">
+            <img
+              src="https://dhjyr2o4dvaja.cloudfront.net/frontend2/images/icon-global.svg"
+              width="20"
+              height="20"
+              loading="lazy"
+              alt="Global"
+              title="Global"
+            />
+            Global
+          </div>
+          <div class="item-language">
+            <img
+              src="https://d3nqrmb1lqq5py.cloudfront.net/images/flag/vn.png"
+              width="20"
+              height="14"
+              loading="lazy"
+              title="VN-VI"
+              alt="VN-VI"
+            />
+            VN-VI
+          </div>
+          <div class="item-language">
+            <img
+              src="https://d3nqrmb1lqq5py.cloudfront.net/images/flag/vn.png"
+              width="20"
+              height="14"
+              loading="lazy"
+              title="VN-EN"
+              alt="VN-EN"
+            />
+            VN-EN
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(".dropdown-language > .caption").on("mouseenter", function () {
+        $(this).parent().toggleClass("open");
+      });
+      $(".dropdown-language > .list-language > .item-language").on(
+        "click",
+        function () {
+          $(".dropdown-language > .list-language > .item-language").removeClass(
+            "selected"
+          );
+          $(this)
+            .addClass("selected")
+            .parent()
+            .parent()
+            .removeClass("open")
+            .children(".caption")
+            .html($(this).html());
+        }
+      );
+    </script>
+  </body>
+</html>
