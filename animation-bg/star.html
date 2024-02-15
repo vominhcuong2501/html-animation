@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-        position: absolute;
-        transform-style: preserve-3d;
-      }
 
-      *:before,
-      *:after {
-        box-sizing: border-box;
-        transform-style: preserve-3d;
-        position: absolute;
-        content: "";
-      }
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <style>
+    * {
+      box-sizing: border-box;
+      position: absolute;
+      transform-style: preserve-3d;
+    }
 
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        perspective: 50vmin;
-        background-size: 100vw 100vh;
-        background-image: radial-gradient(#0000, #673ab72e),
-          linear-gradient(-90deg, #2000587d, #000, #9c27b02b),
-          linear-gradient(0deg, #ff98002e, #000, #8bc34a5e);
-        background-color: #000;
-        box-shadow: 0 0 150vmin 11vmin #000 inset;
-      }
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      transform-style: preserve-3d;
+      position: absolute;
+      content: "";
+    }
 
-      body:before {
-        width: 100vw;
-        height: 100vh;
-        background: radial-gradient(#0000, #0a123a),
-          linear-gradient(180deg, #2000587d, #000, #9c27b02b),
-          linear-gradient(0deg, #ff980054, #000, #009688ba);
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 50vmin;
+      background-size: 100vw 100vh;
+      background-image: radial-gradient(#0000, #673ab72e),
+        linear-gradient(-90deg, #2000587d, #000, #9c27b02b),
+        linear-gradient(0deg, #ff98002e, #000, #8bc34a5e);
+      background-color: #000;
+      box-shadow: 0 0 150vmin 11vmin #000 inset;
+    }
 
-      .stars {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-      }
+    body:before {
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(#0000, #0a123a),
+        linear-gradient(180deg, #2000587d, #000, #9c27b02b),
+        linear-gradient(0deg, #ff980054, #000, #009688ba);
+    }
 
-      .stars:before,
-      .stars:after {
-        width: 200vw;
-        height: 200vh;
-        content: "";
-        background: #fff0;
-        border-radius: 100%;
-        background-image: repeating-conic-gradient(
-            #fff8 0%,
-            transparent 0.0002%,
-            transparent 0.075%,
-            transparent 0.65%
-          ),
-          repeating-conic-gradient(
-            #fff 0%,
-            transparent 0.0004%,
-            transparent 0.05%,
-            transparent 0.495%
-          );
+    .stars {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .stars:before,
+    .stars:after {
+      width: 200vw;
+      height: 200vh;
+      content: "";
+      background: #fff0;
+      border-radius: 100%;
+      background-image: repeating-conic-gradient(#fff8 0%,
+          transparent 0.0002%,
+          transparent 0.075%,
+          transparent 0.65%),
+        repeating-conic-gradient(#fff 0%,
+          transparent 0.0004%,
+          transparent 0.05%,
+          transparent 0.495%);
+      transform: translateZ(-40vmin);
+      opacity: 0;
+      animation: stars 2s ease-in 0s infinite;
+      z-index: 1;
+      left: -50vw;
+      top: -50vh;
+    }
+
+    .stars:after {
+      animation-name: stars2;
+      animation-delay: 1s;
+    }
+
+    @keyframes stars {
+      0% {
         transform: translateZ(-40vmin);
         opacity: 0;
-        animation: stars 4s ease-in 0s infinite;
-        z-index: 1;
-        left: -50vw;
-        top: -50vh;
       }
 
-      .stars:after {
-        animation-name: stars2;
-        animation-delay: 1s;
+      30%,
+      70% {
+        opacity: 1;
       }
 
-      @keyframes stars {
-        0% {
-          transform: translateZ(-40vmin);
-          opacity: 0;
-        }
-        30%,
-        70% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateZ(40vmin) rotate(15deg);
-          opacity: 0;
-        }
+      90% {
+        opacity: 1;
       }
 
-      @keyframes stars2 {
-        0% {
-          transform: translateZ(-40vmin) rotate(180deg);
-          opacity: 0;
-        }
-        30%,
-        70% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateZ(40vmin) rotate(195deg);
-          opacity: 0;
-        }
+      100% {
+        transform: translateZ(40vmin) rotate(15deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes stars2 {
+      0% {
+        transform: translateZ(-40vmin) rotate(180deg);
+        opacity: 0;
       }
 
-      .stars + .stars::before {
-        animation-delay: 2s;
+      30%,
+      70% {
+        opacity: 1;
       }
 
-      .stars + .stars::after {
-        animation-delay: 3s;
+      90% {
+        opacity: 1;
       }
-    </style>
-  </head>
-  <body>
-    <div class="stars"></div>
-    <div class="stars"></div>
-  </body>
+
+      100% {
+        transform: translateZ(40vmin) rotate(195deg);
+        opacity: 0;
+      }
+    }
+
+    .stars+.stars::before {
+      animation-delay: 1s;
+    }
+
+    .stars+.stars::after {
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stars"></div>
+  <div class="stars"></div>
+</body>
+
 </html>
